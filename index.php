@@ -88,13 +88,6 @@ include_once 'includes/header.php';
 
       </div>
 
-      <!-- Bottom Wave Divider -->
-      <div class="section-wave-bottom" style="line-height: 0; background: transparent; overflow: hidden; margin-top: -1px;">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 50px; display: block;">
-          <path d="M0,80 C480,0 960,70 1440,20 L1440,80 L0,80 Z" fill="#ffffff"></path>
-        </svg>
-      </div>
-
     </section><!-- /Hero Section -->
 
     <!-- Home About Section -->
@@ -300,22 +293,14 @@ include_once 'includes/header.php';
     </section>
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action wave-banner p-0">
-      
-      <!-- Top Wave Divider (cuts in from the light grey doctor section above) -->
-      <div class="section-wave-top" style="line-height: 0; background: #f4f7fa; overflow: hidden; margin-bottom: -1px;">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 50px; display: block;">
-          <path d="M0,0 C480,80 960,10 1440,60 L1440,0 L0,0 Z" fill="#f4f7fa"></path>
-        </svg>
-      </div>
-
-      <div class="container py-5" data-aos="fade-up" data-aos-delay="100">
+    <section id="call-to-action" class="call-to-action section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="hero-content">
           <div class="row align-items-center">
             <div class="col-lg-10 offset-lg-1 text-center">
               <div class="content-wrapper" data-aos="fade-up" data-aos-delay="200">
                 <h2>Begin your journey to better mental health</h2>
-                <p>We offer both discreet onsite consultations at our Visakhapatnam clinic and secure, private online telepsychiatry sessions.</p>
+                <p class="mt-4 mb-5">We offer both discreet onsite consultations at our Visakhapatnam clinic and secure, private online telepsychiatry sessions.</p>
                 <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
                   <a href="contact.php" class="btn btn-primary">
                     <span>Book Onsite Visit</span>
@@ -331,14 +316,6 @@ include_once 'includes/header.php';
           </div>
         </div>
       </div>
-
-      <!-- Bottom Wave Divider (cuts in from the off-white footer below) -->
-      <div class="section-wave-bottom" style="line-height: 0; background: transparent; overflow: hidden; margin-top: -1px;">
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 50px; display: block;">
-          <path d="M0,80 C480,0 960,70 1440,20 L1440,80 L0,80 Z" fill="var(--surface-color)"></path>
-        </svg>
-      </div>
-
     </section>
 
 <?php include_once 'includes/footer.php'; ?>
