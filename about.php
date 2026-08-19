@@ -69,7 +69,7 @@ include_once 'includes/header.php';
           <div class="row text-center text-md-start gy-4 justify-content-between align-items-center">
             <div class="col-md-3">
               <div class="stat-banner-item">
-                <h3 class="stat-number mb-1"><span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="2" class="purecounter"></span>+</h3>
+                <h3 class="stat-number mb-1"><span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="2" class="purecounter"></span>+</h3>
                 <p class="stat-label mb-0">Years of Experience</p>
               </div>
             </div>

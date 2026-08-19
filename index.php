@@ -50,7 +50,7 @@ include_once 'includes/header.php';
 
               <div class="hero-stats justify-content-center justify-content-lg-start mb-4" data-aos="fade-right" data-aos-delay="500">
                 <div class="stat-item">
-                  <h3><span data-purecounter-start="0" data-purecounter-end="35" data-purecounter-duration="2" class="purecounter"></span>+</h3>
+                  <h3><span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="2" class="purecounter"></span>+</h3>
                   <p>Years Experience</p>
                 </div>
                 <div class="stat-item">
@@ -124,7 +124,7 @@ include_once 'includes/header.php';
               </div>
               <div class="experience-badge">
                 <div class="badge-content">
-                  <span class="years">35+</span>
+                  <span class="years">36+</span>
                   <span class="text">Years Experience</span>
                 </div>
               </div>
