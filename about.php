@@ -37,26 +37,34 @@ include_once 'includes/header.php';
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <!-- Intro Block: Editorial Split-Column Layout -->
-        <div class="row g-5 align-items-start mb-5">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+        <div class="row g-5 align-items-start mb-5 position-relative">
+          <!-- Decorative Glow -->
+          <div class="position-absolute" style="top: 0; left: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%); filter: blur(40px); z-index: 0; pointer-events: none;"></div>
+          
+          <div class="col-lg-6 position-relative z-1" data-aos="fade-right" data-aos-delay="100">
             <div class="about-hero-text">
-              <span class="sub-label">OUR PHILOSOPHY</span>
-              <h2 class="mt-2 mb-4">Redefining mental healthcare through evidence-based <span class="text-highlight">clinical excellence</span>.</h2>
-              <img src="assets/img/consultation_room.png" class="img-fluid rounded-4 shadow-sm mt-3" alt="Consultation Room" style="width: 100%; object-fit: cover; aspect-ratio: 16/10;">
+              <span class="sub-label text-uppercase" style="color: #00d9ff; letter-spacing: 2px; font-weight: 700; font-size: 0.85rem;">Our Philosophy</span>
+              <h2 class="mt-2 mb-4" style="color: #ffffff; font-weight: 800;">Redefining mental healthcare through evidence-based <span style="color: #00d9ff;">clinical excellence</span>.</h2>
+              <div class="position-relative mt-4">
+                <img src="assets/img/consultation_room.png" class="img-fluid rounded-4 shadow-sm" alt="Consultation Room" style="width: 100%; object-fit: cover; aspect-ratio: 16/10; border: 1px solid rgba(0, 217, 255, 0.3); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);">
+                <div class="position-absolute top-0 start-0 w-100 h-100 rounded-4" style="box-shadow: inset 0 0 30px rgba(0, 217, 255, 0.2); pointer-events: none;"></div>
+              </div>
             </div>
           </div>
           
-          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
-            <div class="about-content-body ps-lg-4">
-              <p class="lead mb-4">At Brain Mind Behaviour Neurosciences Research Institute, we believe that mental health is the foundation of a fulfilling life. Founded with a vision to provide world-class psychiatric and psychological care in Visakhapatnam, our institute brings together decades of clinical experience and cutting-edge medical knowledge.</p>
+          <div class="col-lg-6 position-relative z-1" data-aos="fade-left" data-aos-delay="200">
+            <div class="about-content-body ps-lg-4" style="background: rgba(0, 8, 28, 0.4); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 217, 255, 0.1);">
+              <p class="lead mb-4" style="color: #ffffff; font-weight: 300; font-size: 1.25rem;">At Brain Mind Behaviour Neurosciences Research Institute, we believe that mental health is the foundation of a fulfilling life. Founded with a vision to provide world-class psychiatric and psychological care in Visakhapatnam, our institute brings together decades of clinical experience and cutting-edge medical knowledge.</p>
               
-              <p class="mb-4">Mental health challenges are deeply personal and uniquely complex. Our approach is fundamentally patient-centric. We do not just treat symptoms; we strive to understand the entire individual — their biology, psychology, and social environment.</p>
+              <div style="height: 1px; background: linear-gradient(90deg, rgba(0,217,255,0.3) 0%, transparent 100%); margin: 25px 0;"></div>
               
-              <p class="mb-4">Whether dealing with severe neuropsychiatric conditions, mood disorders, or seeking psychological counseling for life's challenges, our team ensures complete confidentiality, respect, and the highest standard of medical ethics.</p>
+              <p class="mb-4" style="color: #b0c4de;">Mental health challenges are deeply personal and uniquely complex. Our approach is fundamentally patient-centric. We do not just treat symptoms; we strive to understand the entire individual — their biology, psychology, and social environment.</p>
+              
+              <p class="mb-4" style="color: #b0c4de;">Whether dealing with severe neuropsychiatric conditions, mood disorders, or seeking psychological counseling for life's challenges, our team ensures complete confidentiality, respect, and the highest standard of medical ethics.</p>
 
               <div class="mt-4 pt-2">
-                <a href="contact.php" class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm">
-                  <span>Book a Consultation</span>
+                <a href="contact.php" class="btn btn-primary btn-lg rounded-pill px-4 shadow-sm" style="background: linear-gradient(135deg, #0052ff, #00d9ff); border: none;">
+                  <span style="font-weight: 600;">Book a Consultation</span>
                   <i class="bi bi-arrow-right ms-2"></i>
                 </a>
               </div>
@@ -65,30 +73,31 @@ include_once 'includes/header.php';
         </div>
 
         <!-- Premium Immersive Stats Bar -->
-        <div class="stats-banner-wrapper my-5 py-4 px-4 px-md-5 rounded-4 shadow-sm" data-aos="fade-up" data-aos-delay="200">
-          <div class="row text-center text-md-start gy-4 justify-content-between align-items-center">
+        <div class="stats-banner-wrapper my-5 py-5 px-4 px-md-5 position-relative" style="background: rgba(0, 8, 28, 0.8); border: 1px solid rgba(0, 217, 255, 0.2); border-radius: 24px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); backdrop-filter: blur(15px); overflow: hidden;" data-aos="fade-up" data-aos-delay="200">
+          <div class="position-absolute" style="top: -50px; right: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%); filter: blur(30px); pointer-events: none;"></div>
+          <div class="row text-center text-md-start gy-4 justify-content-between align-items-center position-relative z-1">
             <div class="col-md-3">
-              <div class="stat-banner-item">
-                <h3 class="stat-number mb-1"><span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="2" class="purecounter"></span>+</h3>
-                <p class="stat-label mb-0">Years of Experience</p>
+              <div class="stat-banner-item text-center">
+                <h3 class="stat-number mb-1" style="color: #ffffff; font-size: 3rem; font-weight: 800; text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);"><span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="2" class="purecounter"></span>+</h3>
+                <p class="stat-label mb-0 text-uppercase" style="color: #00d9ff; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;">Years of Experience</p>
               </div>
             </div>
-            <div class="col-md-1 d-none d-md-block text-center text-muted">
-              <div class="vertical-divider"></div>
+            <div class="col-md-1 d-none d-md-block text-center">
+              <div class="vertical-divider" style="width: 2px; height: 60px; background: linear-gradient(180deg, transparent, rgba(0, 217, 255, 0.3), transparent); margin: 0 auto;"></div>
             </div>
             <div class="col-md-3">
-              <div class="stat-banner-item">
-                <h3 class="stat-number mb-1"><span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="2" class="purecounter"></span>k+</h3>
-                <p class="stat-label mb-0">Patients Helped</p>
+              <div class="stat-banner-item text-center">
+                <h3 class="stat-number mb-1" style="color: #ffffff; font-size: 3rem; font-weight: 800; text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);"><span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="2" class="purecounter"></span>k+</h3>
+                <p class="stat-label mb-0 text-uppercase" style="color: #00d9ff; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;">Patients Helped</p>
               </div>
             </div>
-            <div class="col-md-1 d-none d-md-block text-center text-muted">
-              <div class="vertical-divider"></div>
+            <div class="col-md-1 d-none d-md-block text-center">
+              <div class="vertical-divider" style="width: 2px; height: 60px; background: linear-gradient(180deg, transparent, rgba(0, 217, 255, 0.3), transparent); margin: 0 auto;"></div>
             </div>
             <div class="col-md-3">
-              <div class="stat-banner-item">
-                <h3 class="stat-number mb-1">100%</h3>
-                <p class="stat-label mb-0">Confidential Care</p>
+              <div class="stat-banner-item text-center">
+                <h3 class="stat-number mb-1" style="color: #ffffff; font-size: 3rem; font-weight: 800; text-shadow: 0 0 15px rgba(0, 217, 255, 0.4);">100%</h3>
+                <p class="stat-label mb-0 text-uppercase" style="color: #00d9ff; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;">Confidential Care</p>
               </div>
             </div>
           </div>

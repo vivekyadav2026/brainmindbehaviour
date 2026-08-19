@@ -14,36 +14,36 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Montserrat",  sans-serif;
-  --nav-font: "Lato",  sans-serif;
+  --default-font: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
+  --heading-font: "Outfit", "Inter", sans-serif;
+  --nav-font: "Outfit", "Inter", sans-serif;
 }
 
-/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+/* Global Colors */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #4a4a4a; /* Crisp dark grey for readable text */
-  --heading-color: #1e1e1e; /* Bold near-black for headings to maximize contrast */
-  --accent-color: #7c62f9; /* Vibrant soft purple-blue from the reference design */
-  --surface-color: #ffffff; /* Surface color used as a background of boxed elements */
+  --background-color: #00040f; /* Deep dark background */
+  --default-color: #b0c4de; /* Soft light blue/grey for text */
+  --heading-color: #ffffff; /* White for headings */
+  --accent-color: #0052ff; /* Deep neon blue */
+  --accent-glow: #00d9ff; /* Cyan glow accent */
+  --surface-color: #00081c; /* Dark card surfaces */
   --contrast-color: #ffffff; /* Contrast color for text */
 }
 
-/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+/* Nav Menu Colors */
 :root {
-  --nav-color: #3c4049;  /* The default color of the main navmenu links */
-  --nav-hover-color: #175cdd; /* Applied to main navmenu links when they are hovered over or active */
-  --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
-  --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #3c4049; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #175cdd; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-color: #ffffff;  
+  --nav-hover-color: #00d9ff; 
+  --nav-mobile-background-color: #00081c; 
+  --nav-dropdown-background-color: #00081c; 
+  --nav-dropdown-color: #ffffff; 
+  --nav-dropdown-hover-color: #00d9ff; 
 }
 
-/* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
-
+/* Color Presets */
 .light-background {
-  --background-color: #f4f8ff;
-  --surface-color: #ffffff;
+  --background-color: #000717;
+  --surface-color: #000a22;
 }
 
 .dark-background {
@@ -146,12 +146,13 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(255, 255, 255, 0);
+  --background-color: #00081a;
   color: var(--default-color);
   transition: all 0.5s;
   z-index: 997;
   background-color: var(--background-color);
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0 18px rgba(0, 217, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15);
 }
 
 .header .topbar {
@@ -232,7 +233,7 @@ h6 {
 /* Global Header on Scroll
 ------------------------------*/
 .scrolled .header {
-  --background-color: #ffffff;
+  --background-color: #00081c;
 }
 
 /*--------------------------------------------------------------
@@ -258,7 +259,7 @@ h6 {
 
   .navmenu>ul>li {
     white-space: nowrap;
-    padding: 15px 14px;
+    padding: 15px 8px !important;
   }
 
   .navmenu>ul>li:last-child {
@@ -268,7 +269,7 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    font-size: 15px;
+    font-size: 14px !important;
     padding: 0 2px;
     font-family: var(--nav-font);
     font-weight: 500;
@@ -295,7 +296,7 @@ h6 {
     height: 2px;
     bottom: -6px;
     left: 0;
-    background-color: var(--accent-color);
+    background-color: var(--nav-hover-color);
     visibility: hidden;
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
@@ -7174,24 +7175,25 @@ section,
 
 /* Book Online Header CTA button */
 .btn-header-cta {
-  background-color: var(--accent-color) !important;
-  color: var(--contrast-color) !important;
-  padding: 8px 20px !important;
-  border-radius: 50px !important;
-  font-weight: 600 !important;
-  font-size: 14px !important;
+  background: linear-gradient(135deg, #00d9ff, #0052ff) !important;
+  color: #ffffff !important;
+  padding: 10px 24px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease !important;
-  border: 1px solid var(--accent-color) !important;
+  border: none !important;
   text-decoration: none !important;
-  box-shadow: 0 4px 12px rgba(124, 98, 249, 0.15) !important;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.45) !important;
   margin-left: 15px !important;
+  display: inline-flex;
+  align-items: center;
 }
 
 .btn-header-cta:hover {
-  background-color: #5d42f5 !important;
-  border-color: #5d42f5 !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 6px 16px rgba(124, 98, 249, 0.25) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.7) !important;
   color: #ffffff !important;
 }
 
@@ -7199,7 +7201,7 @@ section,
 @media (max-width: 991px) {
   /* Logo resizing on mobile */
   .header .logo img {
-    max-height: 70px !important;
+    max-height: 65px !important;
     transition: all 0.3s ease;
   }
   
@@ -7345,4 +7347,1073 @@ section,
 .banner-review-badge:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.1) !important;
+}
+
+/* New Dark Redesign Styles */
+.bg-dark-deep {
+  background-color: #00081a !important;
+}
+
+.hero-new {
+  background-color: #00040f;
+  background-image: radial-gradient(circle at 80% 20%, rgba(0, 82, 255, 0.15) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.08) 0%, transparent 50%);
+  padding: 140px 0 60px 0 !important;
+  min-height: 85vh;
+  display: flex !important;
+  align-items: center !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-new h1 {
+  font-size: 52px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 25px;
+  letter-spacing: -0.5px;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #00d9ff 0%, #0052ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.hero-new .subtitle {
+  color: #00d9ff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.hero-new p {
+  color: #d1dbe5;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 35px;
+}
+
+.btn-glow-blue {
+  background: linear-gradient(135deg, #00d9ff, #0052ff) !important;
+  color: #ffffff !important;
+  padding: 14px 28px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.45) !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-glow-blue:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.7) !important;
+  color: #ffffff !important;
+}
+
+.btn-outline-white {
+  background: transparent !important;
+  color: #ffffff !important;
+  padding: 14px 28px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+.hero-new .hero-img-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-new .hero-img-container img {
+  max-width: 95%;
+  height: auto;
+  animation: floatBrain 6s ease-in-out infinite;
+}
+
+@keyframes floatBrain {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Specialty Section Styles */
+.specialties-section {
+  background-color: #00040f;
+  padding: 60px 0;
+}
+
+.card-specialty {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-radius: 20px !important;
+  backdrop-filter: blur(12px);
+  padding: 35px 30px !important;
+  transition: all 0.4s ease !important;
+  height: 100%;
+}
+
+.card-specialty:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(0, 217, 255, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.15) !important;
+}
+
+.card-specialty .icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 82, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  color: #00d9ff;
+  font-size: 24px;
+}
+
+.card-specialty h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.card-specialty p {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #b0c4de;
+  margin-bottom: 20px;
+}
+
+.card-specialty .learn-more-link {
+  color: #00d9ff;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card-specialty .learn-more-link:hover {
+  color: #ffffff;
+  padding-left: 5px;
+}
+
+/* Lower Section Split Panel */
+.panel-split {
+  background-color: #ffffff;
+  color: #1e1e1e;
+  padding: 80px 0;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.panel-split h3 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #0c1c36;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.panel-split h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: #0052ff;
+  border-radius: 2px;
+}
+
+.panel-split .doctor-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.panel-split .doctor-item:last-child {
+  border-bottom: none;
+}
+
+.panel-split .doctor-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(0, 82, 255, 0.1);
+  margin-right: 25px;
+}
+
+.panel-split .doctor-item .doc-details h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0c1c36;
+  margin-bottom: 4px;
+}
+
+.panel-split .doctor-item .doc-details .title {
+  color: #0052ff;
+  font-weight: 600;
+  font-size: 13.5px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.panel-split .doctor-item .doc-details .desc {
+  font-size: 13.5px;
+  color: #6c757d;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.panel-split .doctor-item .btn-doc-profile {
+  background-color: #0c1c36 !important;
+  color: #ffffff !important;
+  border-radius: 6px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  padding: 6px 18px !important;
+  border: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.panel-split .doctor-item .btn-doc-profile:hover {
+  background-color: #0052ff !important;
+  transform: translateY(-1px);
+}
+
+/* Booking Consultation Styles */
+.booking-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 30px;
+  height: 100%;
+}
+
+.consult-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.consult-item:hover {
+  border-color: #0052ff;
+  box-shadow: 0 4px 15px rgba(0, 82, 255, 0.05);
+}
+
+.consult-item .consult-left {
+  display: flex;
+  align-items: center;
+}
+
+.consult-item .consult-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 82, 255, 0.08);
+  color: #0052ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-right: 15px;
+}
+
+.consult-item .consult-info h5 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0c1c36;
+  margin-bottom: 2px;
+}
+
+.consult-item .consult-info span {
+  font-size: 12.5px;
+  color: #6c757d;
+}
+
+.consult-item .price {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0052ff;
+}
+
+.btn-book-now {
+  background: #0052ff !important;
+  color: #ffffff !important;
+  width: 100%;
+  padding: 15px !important;
+  border-radius: 6px !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 82, 255, 0.25) !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-book-now:hover {
+  background: #0041cc !important;
+  box-shadow: 0 6px 20px rgba(0, 82, 255, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Bottom Assurances Bar */
+.bar-assurances {
+  background-color: #00081a;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding: 20px 0;
+  color: #ffffff;
+}
+
+.bar-assurances .assurance-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #b0c4de;
+  letter-spacing: 0.3px;
+}
+
+.bar-assurances .assurance-item i {
+  color: #00d9ff;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .hero-new {
+    padding: 120px 0 60px 0 !important;
+  }
+  .hero-new h1 {
+    font-size: 40px;
+    text-align: center;
+  }
+  .hero-new p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-new .hero-actions {
+    justify-content: center;
+  }
+  .panel-split .doctor-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .panel-split .doctor-item img {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .panel-split .doctor-item .btn-doc-profile {
+    margin-bottom: 15px;
+  }
+}
+
+/* Helper class overrides for dark theme alignment */
+.bg-light {
+  background-color: #00081c !important;
+  border: 1px solid rgba(0, 217, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+.bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6,
+.bg-light p, .bg-light span, .bg-light li, .bg-light div {
+  color: #d1dbe5 !important;
+}
+.bg-light h1, .bg-light h2, .bg-light h3, .bg-light h4, .bg-light h5, .bg-light h6 {
+  color: #ffffff !important;
+}
+
+/* Contact page card styling overrides for dark theme */
+.contact .contact-form-card {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  box-shadow: 0 12px 35px rgba(0, 217, 255, 0.08) !important;
+}
+
+.contact .contact-form-card h2 {
+  color: #ffffff !important;
+}
+
+.contact .contact-form-card .form-control {
+  background-color: #00081c !important;
+  border: 1px solid rgba(0, 217, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.contact .contact-form-card .form-control:focus {
+  border-color: #00d9ff !important;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.25) !important;
+}
+
+.contact .contact-info-wrapper {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  padding: 30px !important;
+  border-radius: 16px !important;
+}
+
+.contact .contact-info-item .info-icon {
+  background: rgba(0, 82, 255, 0.1) !important;
+  color: #00d9ff !important;
+  border: 1px solid rgba(0, 217, 255, 0.2) !important;
+}
+
+.contact .contact-info-item .info-content p, 
+.contact .contact-info-item .info-content p a {
+  color: #b0c4de !important;
+}
+
+/* About page theme overrides */
+.about .pillar-card {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-right: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-left: 4px solid #0052ff !important;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.08) !important;
+}
+
+.about .pillar-card:hover {
+  border-color: rgba(0, 217, 255, 0.4) !important;
+  box-shadow: 0 16px 40px rgba(0, 217, 255, 0.15) !important;
+}
+
+.about .pillar-card .pillar-icon i {
+  color: #00d9ff !important;
+}
+
+.about .pillar-card h4 {
+  color: #ffffff !important;
+}
+
+.about .stats-banner-wrapper {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+}
+
+.about .stat-banner-item h3 {
+  color: #00d9ff !important;
+}
+
+.about .stat-banner-item p {
+  color: #b0c4de !important;
+}
+
+/* Doctors page theme overrides */
+.doctors .doctor-card {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.08) !important;
+}
+
+.doctors .doctor-card:hover {
+  border-color: rgba(0, 217, 255, 0.4) !important;
+  box-shadow: 0 20px 45px rgba(0, 217, 255, 0.15) !important;
+}
+
+.doctors .doctor-content h4 {
+  color: #ffffff !important;
+}
+
+.doctors .doctor-content .specialty {
+  color: #00d9ff !important;
+  font-weight: 600 !important;
+}
+
+.doctors .doctor-content p {
+  color: #b0c4de !important;
+}
+
+.doctors .doctor-meta .experience span,
+.doctors .doctor-meta .department span {
+  color: #b0c4de !important;
+}
+
+.doctors .doctor-meta i {
+  color: #00d9ff !important;
+}
+
+.doctors .btn-appointment {
+  background: #0052ff !important;
+  color: #ffffff !important;
+  border-radius: 50px !important;
+}
+
+.doctors .btn-appointment:hover {
+  background: #0041cc !important;
+  box-shadow: 0 5px 15px rgba(0, 82, 255, 0.3) !important;
+}
+
+/* Credentials Gallery cards styling */
+.credentials-gallery .gallery-item {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+}
+
+.credentials-gallery .gallery-item .card-header {
+  background: #00081c !important;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.15) !important;
+}
+
+.credentials-gallery .gallery-item .card-body h5 {
+  color: #ffffff !important;
+}
+
+/* Consultation Forms Input styling */
+.form-control, .form-select {
+  background-color: #00081c !important;
+  border: 1px solid rgba(0, 217, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.form-control:focus, .form-select:focus {
+  background-color: #000c2a !important;
+  color: #ffffff !important;
+  border-color: #00d9ff !important;
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.25) !important;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Glass Card Component */
+.glass-card {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.05) !important;
+  transition: all 0.3s ease !important;
+  color: #ffffff !important;
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 217, 255, 0.45) !important;
+  box-shadow: 0 15px 40px rgba(0, 217, 255, 0.18) !important;
+  transform: translateY(-5px) !important;
+}
+
+.glass-card h4, .glass-card h5 {
+  color: #ffffff !important;
+}
+
+.glass-card p, .glass-card span {
+  color: #b0c4de !important;
+}
+
+/* Text Gradient Cyan Utility */
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #00d9ff 0%, #0052ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* High-tech Glass Accordion for FAQs */
+.faq .accordion-item {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-radius: 12px !important;
+  margin-bottom: 15px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 217, 255, 0.03) !important;
+}
+
+.faq .accordion-button {
+  background: transparent !important;
+  color: #ffffff !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 20px 25px !important;
+  transition: all 0.3s ease;
+}
+
+.faq .accordion-button::after {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.faq .accordion-button:not(.collapsed) {
+  background: linear-gradient(135deg, rgba(0, 82, 255, 0.1), rgba(0, 217, 255, 0.05)) !important;
+  color: #00d9ff !important;
+}
+
+.faq .accordion-collapse {
+  background: rgba(0, 4, 15, 0.4) !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.08) !important;
+}
+
+.faq .accordion-body {
+  color: #b0c4de !important;
+  font-size: 14.5px !important;
+  line-height: 1.6 !important;
+  padding: 20px 25px !important;
+}
+
+
+/* Logo Text Styles and Responsiveness */
+.logo-title {
+  font-size: 20px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.5px !important;
+  font-family: 'Outfit', sans-serif !important;
+  white-space: nowrap !important;
+}
+.logo-subtitle {
+  font-size: 13px !important;
+  line-height: 1.1 !important;
+  letter-spacing: 0.5px !important;
+  font-family: 'Outfit', sans-serif !important;
+  opacity: 0.9 !important;
+  white-space: nowrap !important;
+}
+.logo-tagline {
+  font-size: 9px !important;
+  line-height: 1.1 !important;
+  margin-top: 3px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  color: #b0c4de !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 575px) {
+  .logo-title {
+    font-size: 15px !important;
+  }
+  .logo-subtitle {
+    font-size: 10px !important;
+  }
+  .logo-tagline {
+    font-size: 7.5px !important;
+    margin-top: 1px !important;
+  }
+  .header .logo img {
+    max-height: 55px !important;
+    margin-right: 8px !important;
+  }
+}
+
+/* --- Dark Theme Cohesion Overrides for Remaining Sections --- */
+
+/* Split Panel (Team & Consultation) */
+.panel-split {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.1) !important;
+}
+.panel-split h3 {
+  color: #ffffff !important;
+}
+.panel-split h3::after {
+  background-color: #00d9ff !important;
+}
+.panel-split .doctor-item {
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1) !important;
+}
+.panel-split .doctor-item .doc-details h4 {
+  color: #ffffff !important;
+}
+.panel-split .doctor-item .doc-details .title {
+  color: #00d9ff !important;
+}
+.panel-split .doctor-item .doc-details .desc {
+  color: #b0c4de !important;
+}
+.panel-split .doctor-item img {
+  border-color: rgba(0, 217, 255, 0.2) !important;
+  border-radius: 12px !important;
+  width: 90px !important;
+  height: 110px !important;
+}
+
+/* Booking Box */
+.booking-box {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.05) !important;
+}
+.consult-item {
+  background: rgba(0, 4, 15, 0.8) !important;
+  border: 1px solid rgba(0, 217, 255, 0.1) !important;
+}
+.consult-item:hover {
+  border-color: rgba(0, 217, 255, 0.45) !important;
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.15) !important;
+}
+.consult-item .consult-icon {
+  background: rgba(0, 217, 255, 0.1) !important;
+  color: #00d9ff !important;
+}
+.consult-item .consult-info h5 {
+  color: #ffffff !important;
+}
+.consult-item .consult-info span {
+  color: #b0c4de !important;
+}
+.consult-item .price {
+  color: #00d9ff !important;
+}
+
+/* Call To Action Section */
+.call-to-action {
+  background: transparent !important;
+  padding: 80px 0 !important;
+}
+.call-to-action .content-wrapper {
+  background: radial-gradient(circle at center, rgba(0, 82, 255, 0.15) 0%, rgba(0, 4, 15, 0.9) 100%) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  box-shadow: 0 10px 40px rgba(0, 217, 255, 0.08) !important;
+}
+.call-to-action .content-wrapper h2 {
+  color: #ffffff !important;
+}
+.call-to-action .content-wrapper p {
+  color: #b0c4de !important;
+}
+.call-to-action .btn-outline-white {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Bottom Assurances Bar */
+.bar-assurances {
+  background-color: #00020a !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.05) !important;
+}
+
+/* Home About Text Fixes */
+.home-about .text-muted, 
+.home-about .text-white-50 {
+  color: #b0c4de !important;
+}
+
+/* Footer Styling (using .footer-16 for specificity) */
+.footer-16 {
+  background-color: #00040f !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.1) !important;
+  color: #b0c4de !important;
+}
+.footer-16 .brand-description, 
+.footer-16 .contact-info span,
+.footer-16 .contact-info .contact-item span a {
+  color: #b0c4de !important;
+}
+.footer-16 .contact-item i {
+  color: #00d9ff !important;
+}
+.footer-16 h6, .footer-16 .nav-column h6 {
+  color: #ffffff !important;
+}
+.footer-16 .footer-nav a, 
+.footer-16 a,
+.footer-16 .nav-column .footer-nav a {
+  color: #b0c4de !important;
+}
+.footer-16 .footer-nav a:hover, 
+.footer-16 a:hover,
+.footer-16 .nav-column .footer-nav a:hover {
+  color: #00d9ff !important;
+}
+.footer-16 .footer-bottom {
+  background-color: #00020a !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.05) !important;
+}
+.footer-16 .footer-bottom p,
+.footer-16 .footer-bottom .copyright p {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+.footer-16 .footer-bottom .copyright p .sitename,
+.footer-16 .footer-bottom .legal-links a {
+  color: #b0c4de !important;
+}
+
+/* ==========================================================================
+   GLOBAL INNER PAGES OVERRIDES (DARK NEON GLASSMORPHISM)
+   ========================================================================== */
+
+/* 1. Page Titles & Breadcrumbs */
+.page-title {
+  background: radial-gradient(ellipse at center bottom, rgba(0, 82, 255, 0.2) 0%, #00040f 100%) !important;
+  border-bottom: 1px solid rgba(0, 217, 255, 0.1) !important;
+  position: relative;
+  overflow: hidden;
+}
+.page-title::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.4), transparent);
+}
+.page-title .heading {
+  background: transparent !important;
+  padding: 80px 0 60px 0 !important;
+}
+.page-title .heading h1, .page-title .heading-title {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 20px rgba(0, 217, 255, 0.3) !important;
+}
+.page-title .heading p {
+  color: #b0c4de !important;
+  font-size: 1.1rem;
+}
+.page-title nav.breadcrumbs {
+  background: rgba(0, 8, 28, 0.8) !important;
+  backdrop-filter: blur(10px) !important;
+  border-top: 1px solid rgba(0, 217, 255, 0.05) !important;
+  padding: 15px 0 !important;
+}
+.page-title nav.breadcrumbs ol li a {
+  color: #00d9ff !important;
+}
+.page-title nav.breadcrumbs ol li.current {
+  color: #b0c4de !important;
+}
+.page-title nav.breadcrumbs ol li+li::before {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* 2. Global Section Backgrounds */
+.about, .services, .doctors, .contact, .department, .section {
+  background-color: #00040f !important;
+}
+
+/* 3. Glassmorphic Cards (Service Items, Doctor Cards, General Cards) */
+.service-item, .doctor-card, .info-item, .card, .pricing-item {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.4s ease !important;
+  overflow: hidden;
+}
+.service-item:hover, .doctor-card:hover, .info-item:hover, .card:hover, .pricing-item:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(0, 217, 255, 0.4) !important;
+  box-shadow: 0 20px 50px rgba(0, 217, 255, 0.15) !important;
+}
+
+/* Typography inside cards */
+.service-item h3, .doctor-card h4, .info-item h3, .card h3 {
+  color: #ffffff !important;
+}
+.service-item p, .doctor-card p, .info-item p, .card p {
+  color: #b0c4de !important;
+}
+.service-item .service-features span {
+  color: #b0c4de !important;
+}
+.service-item .service-features i {
+  color: #00d9ff !important;
+}
+
+/* 4. Forms & Inputs (Contact/Booking) */
+.php-email-form, .booking-form {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  border-radius: 24px !important;
+  padding: 40px !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.php-email-form input, .php-email-form textarea, .php-email-form select,
+.form-control, .form-select {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+}
+.php-email-form input:focus, .php-email-form textarea:focus, .php-email-form select:focus,
+.form-control:focus, .form-select:focus {
+  background: rgba(0, 217, 255, 0.05) !important;
+  border-color: #00d9ff !important;
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.2) !important;
+  outline: none !important;
+}
+.php-email-form input::placeholder, .php-email-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+.php-email-form button[type="submit"] {
+  background: linear-gradient(135deg, #0052ff, #00d9ff) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 12px 30px !important;
+  font-weight: 600 !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 10px 20px rgba(0, 82, 255, 0.3) !important;
+}
+.php-email-form button[type="submit"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 30px rgba(0, 217, 255, 0.5) !important;
+}
+
+/* Standard Paragraph Fallbacks for inner pages */
+main p:not([class*="text-"]) {
+  color: #b0c4de !important;
+}
+
+/* Service Detail Pages Fallbacks & Overrides */
+.main .text-muted {
+  color: #b0c4de !important;
+}
+.main .text-dark {
+  color: #ffffff !important;
+}
+.main .bg-light, .main .bg-white {
+  background-color: rgba(0, 8, 28, 0.65) !important;
+  border-color: rgba(0, 217, 255, 0.3) !important;
+  color: #b0c4de !important;
+  backdrop-filter: blur(10px) !important;
+}
+.main .text-primary {
+  color: #00d9ff !important;
+}
+.main .border-primary {
+  border-color: #00d9ff !important;
+}
+.service-details-content h1, 
+.service-details-content h2, 
+.service-details-content h3, 
+.service-details-content h4, 
+.service-details-content h5 {
+  color: #ffffff !important;
+}
+.service-details-content h4 {
+  color: #00d9ff !important;
+}
+.main .form-label {
+  color: #b0c4de !important;
+  font-weight: 500 !important;
+}
+
+/* 5. Google Map Dark Theme Override */
+.contact .map-container iframe {
+  filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%) sepia(20%) !important;
+  border: 1px solid rgba(0, 217, 255, 0.2) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  border-radius: 20px !important;
+}
+
+/* 6. Fix Contact Page Light Theme Overrides */
+.contact .contact-info-item, .contact .contact-form-card {
+  background: rgba(0, 8, 28, 0.65) !important;
+  border: 1px solid rgba(0, 217, 255, 0.15) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px) !important;
+}
+.contact .contact-info-item .info-icon {
+  background-color: rgba(0, 217, 255, 0.1) !important;
+  border: 1px solid rgba(0, 217, 255, 0.2) !important;
+}
+.contact .contact-info-item .info-icon i {
+  color: #00d9ff !important;
+}
+.contact .contact-info-item .info-content h3, .contact .contact-form-card h2 {
+  color: #ffffff !important;
+}
+.contact .contact-info-item .info-content p, .contact .contact-form-card p {
+  color: #b0c4de !important;
+}
+.contact .php-email-form input, .contact .php-email-form textarea {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+.contact .php-email-form input:focus, .contact .php-email-form textarea:focus {
+  background: rgba(0, 217, 255, 0.05) !important;
+  border-color: #00d9ff !important;
+}
+.contact .php-email-form button[type="submit"] {
+  background: linear-gradient(135deg, #0052ff, #00d9ff) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. Page Titles */
+  .page-title .heading {
+    padding: 40px 0 30px 0 !important;
+  }
+  .page-title .heading h1, .page-title .heading-title {
+    font-size: 2rem !important;
+  }
+
+  /* 2. Glassmorphic Forms & Cards */
+  .php-email-form, .booking-form {
+    padding: 20px !important;
+  }
+  .contact .contact-form-card {
+    padding: 20px !important;
+  }
+  .contact-info-wrapper .contact-info-item {
+    padding: 20px !important;
+  }
+
+  /* 3. General Padding */
+  section, .section {
+    padding: 40px 0 !important;
+  }
+
+  /* 4. Contact Visiting Cards Heights */
+  .contact .card .p-4 {
+    height: auto !important;
+    padding-bottom: 30px !important;
+  }
+
+  /* 5. About Stats Banner */
+  .stat-banner-item {
+    margin-bottom: 30px;
+  }
+  .col-md-3:last-child .stat-banner-item {
+    margin-bottom: 0;
+  }
 }

@@ -115,28 +115,29 @@ $services = [
 
           <?php foreach ($services as $index => $service): ?>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="<?php echo 200 + ($index % 3) * 50; ?>">
-            <div class="service-item" style="height: 100%; display: flex; flex-direction: column;">
-              <div class="service-image">
-                <img src="<?php echo $service['img']; ?>" alt="<?php echo $service['title']; ?>" class="img-fluid" style="height: 250px; width: 100%; object-fit: cover;">
-                <div class="service-overlay">
+            <div class="service-item position-relative" style="height: 100%; display: flex; flex-direction: column; overflow: hidden; border-radius: 20px;">
+              <div class="service-image position-relative">
+                <img src="<?php echo $service['img']; ?>" alt="<?php echo $service['title']; ?>" class="img-fluid w-100" style="height: 250px; object-fit: cover;">
+                <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, transparent, rgba(0, 8, 28, 0.9)); pointer-events: none;"></div>
+                <div class="service-overlay position-absolute" style="bottom: -25px; right: 20px; background: rgba(0, 8, 28, 0.9); border: 1px solid rgba(0, 217, 255, 0.3); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(0, 217, 255, 0.2); backdrop-filter: blur(10px); z-index: 2;">
                   <?php if (strpos($service['icon'], 'fa') === 0): ?>
-                    <i class="<?php echo $service['icon']; ?>" style="font-size: 1.8rem; color: white;"></i>
+                    <i class="<?php echo $service['icon']; ?>" style="font-size: 1.5rem; color: #00d9ff; filter: drop-shadow(0 0 5px rgba(0,217,255,0.5));"></i>
                   <?php else: ?>
-                    <i class="bi <?php echo $service['icon']; ?>" style="font-size: 2rem; color: white;"></i>
+                    <i class="bi <?php echo $service['icon']; ?>" style="font-size: 1.8rem; color: #00d9ff; filter: drop-shadow(0 0 5px rgba(0,217,255,0.5));"></i>
                   <?php endif; ?>
                 </div>
               </div>
-              <div class="service-content" style="flex-grow: 1; display: flex; flex-direction: column;">
-                <h3><?php echo $service['title']; ?></h3>
-                <p style="flex-grow: 1;"><?php echo $service['desc']; ?></p>
+              <div class="service-content position-relative z-1" style="flex-grow: 1; display: flex; flex-direction: column; padding: 30px; background: transparent;">
+                <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; color: #ffffff;"><?php echo $service['title']; ?></h3>
+                <p style="flex-grow: 1; color: #b0c4de; font-size: 0.95rem; line-height: 1.6;"><?php echo $service['desc']; ?></p>
                 <div class="service-features mt-3 mb-4">
                   <?php foreach ($service['features'] as $feature): ?>
-                  <span class="feature-item"><i class="bi bi-check2"></i> <?php echo $feature; ?></span>
+                  <span class="feature-item d-block mb-2" style="font-size: 0.9rem; color: #b0c4de;"><i class="bi bi-check2" style="color: #00d9ff; margin-right: 8px; filter: drop-shadow(0 0 3px rgba(0,217,255,0.5));"></i> <?php echo $feature; ?></span>
                   <?php endforeach; ?>
                 </div>
-                <a href="<?php echo $service['link']; ?>" class="service-btn mt-auto">
-                  <span>Learn More</span>
-                  <i class="bi bi-arrow-right"></i>
+                <a href="<?php echo $service['link']; ?>" class="service-btn mt-auto d-inline-flex align-items-center" style="color: #00d9ff; font-weight: 600; font-size: 0.95rem; text-decoration: none; transition: all 0.3s ease;">
+                  <span style="border-bottom: 1px solid transparent; transition: border-color 0.3s;">Learn More</span>
+                  <i class="bi bi-arrow-right ms-2" style="transition: transform 0.3s;"></i>
                 </a>
               </div>
             </div>

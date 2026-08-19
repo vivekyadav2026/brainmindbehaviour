@@ -3,30 +3,21 @@
 $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 <header id="header" class="header fixed-top">
-    <div class="topbar d-flex align-items-center dark-background">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@brainmindbehaviour.com">contact@brainmindbehaviour.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 91603 66716</span></i>
-        </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-          <!-- We can add social links here if needed -->
-        </div>
-      </div>
-    </div><!-- End Top Bar -->
+    <!-- Topbar removed to match mockup design -->
 
-    <div class="branding d-flex align-items-center">
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="index.php" class="logo d-flex align-items-center">
-          <img src="assets/img/logo.png" alt="Brain Mind Behaviour Logo" style="max-height: 80px;">
+    <div class="branding d-flex align-items-center py-2 bg-dark-deep border-bottom-glow">
+      <div class="container-fluid px-lg-5 position-relative d-flex align-items-center justify-content-between">
+        
+        <!-- Logo and Title Group -->
+        <a href="index.php" class="logo d-flex align-items-center text-decoration-none">
+          <img src="assets/img/logo_transparent.png" alt="Brain Mind Behavior Clinic" style="max-height: 95px; width: auto;">
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="index.php" class="<?php echo $currentPage == 'index.php' ? 'active' : ''; ?>">Home</a></li>
-            <li><a href="about.php" class="<?php echo $currentPage == 'about.php' ? 'active' : ''; ?>">About</a></li>
-            <li><a href="doctors.php" class="<?php echo $currentPage == 'doctors.php' ? 'active' : ''; ?>">Doctors</a></li>
-            <li class="dropdown"><a href="services.php" class="<?php echo ($currentPage == 'services.php' || in_array($currentPage, ['psychiatry.php', 'neuropsychiatry.php', 'counselling.php', 'depression.php', 'anxiety.php', 'bipolar-disorder.php', 'schizophrenia.php', 'addiction.php', 'dementia.php'])) ? 'active' : ''; ?>"><span>Services</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li><a href="index.php" class="<?php echo $currentPage == 'index.php' ? 'active' : ''; ?>">HOME</a></li>
+            <li><a href="about.php" class="<?php echo $currentPage == 'about.php' ? 'active' : ''; ?>">ABOUT US</a></li>
+            <li class="dropdown"><a href="services.php" class="<?php echo ($currentPage == 'services.php' || in_array($currentPage, ['psychiatry.php', 'neuropsychiatry.php', 'counselling.php', 'depression.php', 'anxiety.php', 'bipolar-disorder.php', 'schizophrenia.php', 'addiction.php', 'dementia.php'])) ? 'active' : ''; ?>"><span>SERVICES</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
               <ul>
                 <li><a href="psychiatry.php">Psychiatry</a></li>
                 <li><a href="neuropsychiatry.php">Neuropsychiatry</a></li>
@@ -39,19 +30,16 @@ $currentPage = basename($_SERVER['PHP_SELF']);
                 <li><a href="dementia.php">Dementia & Geriatric Psychiatry</a></li>
               </ul>
             </li>
-            <li><a href="knowledge-centre.php" class="<?php echo $currentPage == 'knowledge-centre.php' ? 'active' : ''; ?>">Knowledge Centre</a></li>
-            <li class="dropdown"><a href="#!" class="<?php echo in_array($currentPage, ['online-consultation.php', 'onsite-consultation.php']) ? 'active' : ''; ?>"><span>Book Appointment</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="online-consultation.php">Online Video Consultation</a></li>
-                <li><a href="onsite-consultation.php">Onsite Clinic Visit</a></li>
-              </ul>
-            </li>
-            <li><a href="contact.php" class="<?php echo $currentPage == 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
+            <li><a href="doctors.php" class="<?php echo $currentPage == 'doctors.php' ? 'active' : ''; ?>">OUR TEAM</a></li>
+            <li><a href="knowledge-centre.php" class="<?php echo $currentPage == 'knowledge-centre.php' ? 'active' : ''; ?>">KNOWLEDGE CENTRE</a></li>
+            <li><a href="contact.php" class="<?php echo $currentPage == 'contact.php' ? 'active' : ''; ?>">CONTACT</a></li>
           </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list text-white fs-2"></i>
         </nav>
 
-        <a href="online-consultation.php" class="btn-header-cta d-none d-lg-inline-block">Book Online</a>
+        <a href="onsite-consultation.php" class="btn-header-cta d-none d-xl-inline-flex align-items-center">
+          <i class="far fa-calendar-check me-2"></i>BOOK APPOINTMENT
+        </a>
       </div>
     </div>
 </header>
