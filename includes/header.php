@@ -33,5 +33,7 @@ $bodyClass = $bodyClass ?? 'index-page';
   <link href="assets/css/main.css?v=<?php echo filemtime('assets/css/main.css'); ?>" rel="stylesheet">
 </head>
 <body class="<?php echo htmlspecialchars($bodyClass); ?>">
+  <!-- Global interactive neural background -->
+  <canvas class="neural-canvas global-bg-canvas"></canvas>
   <?php include_once 'navbar.php'; ?>
   <main class="main">

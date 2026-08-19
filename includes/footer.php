@@ -115,6 +115,6 @@
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=<?php echo filemtime(dirname(__DIR__) . '/assets/js/main.js'); ?>"></script>
 </body>
 </html>

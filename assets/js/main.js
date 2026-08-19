@@ -144,4 +144,114 @@
     });
   });
 
+  /**
+   * High-Tech Neural Network background animation
+   */
+  class NeuralNetwork {
+    constructor(canvas) {
+      this.canvas = canvas;
+      this.ctx = canvas.getContext('2d');
+      this.particles = [];
+      this.maxParticles = 50;
+      this.connectionDistance = 100;
+      this.resize();
+      window.addEventListener('resize', () => this.resize());
+      this.init();
+      this.animate();
+    }
+
+    resize() {
+      // Check if it's the global background canvas (needs fixed viewport bounds)
+      if (this.canvas.classList.contains('global-bg-canvas')) {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+      } else {
+        // Safely resize to the container dimensions with fallbacks
+        this.canvas.width = this.canvas.parentElement.offsetWidth || window.innerWidth;
+        this.canvas.height = this.canvas.parentElement.offsetHeight || 600;
+      }
+      
+      if (this.canvas.width < 768) {
+        this.maxParticles = 30;
+        this.connectionDistance = 90;
+      } else {
+        this.maxParticles = 65;
+        this.connectionDistance = 140;
+      }
+    }
+
+    init() {
+      this.particles = [];
+      for (let i = 0; i < this.maxParticles; i++) {
+        this.particles.push({
+          x: Math.random() * this.canvas.width,
+          y: Math.random() * this.canvas.height,
+          vx: (Math.random() - 0.5) * 0.25,
+          vy: (Math.random() - 0.5) * 0.25,
+          radius: Math.random() * 2 + 1.5
+        });
+      }
+    }
+
+    animate() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      
+      // Draw Connections (Brighter and longer)
+      for (let i = 0; i < this.particles.length; i++) {
+        const p1 = this.particles[i];
+        for (let j = i + 1; j < this.particles.length; j++) {
+          const p2 = this.particles[j];
+          const dist = Math.hypot(p1.x - p2.x, p1.y - p2.y);
+          
+          if (dist < this.connectionDistance) {
+            // Brighter lines (0.65 scale instead of 0.18)
+            const alpha = (1 - dist / this.connectionDistance) * 0.65;
+            this.ctx.strokeStyle = `rgba(0, 217, 255, ${alpha})`;
+            this.ctx.lineWidth = 1.0;
+            this.ctx.beginPath();
+            this.ctx.moveTo(p1.x, p1.y);
+            this.ctx.lineTo(p2.x, p2.y);
+            this.ctx.stroke();
+          }
+        }
+      }
+
+      // Draw and Update Particles (Glow effect like active brain synapses)
+      for (let p of this.particles) {
+        // Outer glowing aura
+        this.ctx.fillStyle = 'rgba(0, 217, 255, 0.18)';
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
+        this.ctx.fill();
+
+        // Inner glowing core
+        this.ctx.fillStyle = 'rgba(0, 217, 255, 0.95)';
+        this.ctx.beginPath();
+        this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        this.ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > this.canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > this.canvas.height) p.vy *= -1;
+      }
+
+      requestAnimationFrame(() => this.animate());
+    }
+  }
+
+  // Initialize all neural network canvases on DOMContentLoaded or immediately
+  const initCanvases = () => {
+    document.querySelectorAll('.neural-canvas').forEach(canvas => {
+      new NeuralNetwork(canvas);
+    });
+  };
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCanvases);
+  } else {
+    initCanvases();
+  }
+
 })();
