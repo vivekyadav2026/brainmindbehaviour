@@ -7201,7 +7201,7 @@ section,
 @media (max-width: 991px) {
   /* Logo resizing on mobile */
   .header .logo img {
-    max-height: 65px !important;
+    max-height: 85px !important;
     transition: all 0.3s ease;
   }
   
@@ -7512,16 +7512,17 @@ section,
   margin-bottom: 20px;
 }
 
-.card-specialty .learn-more-link {
+.card-specialty .learn-more {
   color: #00d9ff;
   font-weight: 600;
   font-size: 14px;
   transition: 0.3s;
   display: inline-flex;
   align-items: center;
+  text-decoration: none;
 }
 
-.card-specialty .learn-more-link:hover {
+.card-specialty .learn-more:hover {
   color: #ffffff;
   padding-left: 5px;
 }
@@ -8033,7 +8034,7 @@ section,
     margin-top: 1px !important;
   }
   .header .logo img {
-    max-height: 55px !important;
+    max-height: 75px !important;
     margin-right: 8px !important;
   }
 }
@@ -8398,9 +8399,44 @@ main p:not([class*="text-"]) {
     padding: 20px !important;
   }
 
-  /* 3. General Padding */
+  /* 3. General Padding & Text Alignment */
   section, .section {
     padding: 40px 0 !important;
+  }
+  .about-content, .home-about, .section-title, .panel-split h3, .card-body {
+    text-align: center !important;
+  }
+  .about-content .d-flex {
+    justify-content: center !important;
+  }
+  .about-content h2 {
+    font-size: 2rem !important;
+  }
+  .cta-section {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .booking-box .mt-4 {
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .glass-card {
+    margin-bottom: 15px !important;
+  }
+  .glass-card i {
+    display: inline-block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .about-content div[style*="width: 60px"] {
+    margin: 0 auto 25px auto !important;
+  }
+  .about-visual .award-badge-floating {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    margin-top: 20px !important;
+    justify-content: center !important;
   }
 
   /* 4. Contact Visiting Cards Heights */
@@ -8415,5 +8451,87 @@ main p:not([class*="text-"]) {
   }
   .col-md-3:last-child .stat-banner-item {
     margin-bottom: 0;
+  }
+
+  /* 6. Home Hero Section Fixes */
+  .hero-new {
+    padding: 120px 0 40px 0 !important;
+    min-height: auto !important;
+    text-align: center !important;
+  }
+  .hero-new .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-new h1 {
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+  }
+  .hero-new .subtitle {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+  .hero-new .hero-description {
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    margin: 0 auto 30px auto !important;
+  }
+  .hero-new .hero-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+  .hero-new .hero-actions a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  .hero-new .banner-review-badge {
+    margin: 0 auto 40px auto !important;
+  }
+  .hero-new .hero-img-container {
+    margin-top: 20px !important;
+  }
+  .hero-new .hero-img-container img {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  /* 7. Meet Our Team Mobile Fixes */
+  .panel-split .doctor-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 30px 15px !important;
+  }
+  .panel-split .doctor-item img {
+    margin-right: 0 !important;
+    margin-bottom: 20px !important;
+    width: 140px !important;
+    height: 170px !important;
+  }
+  .panel-split .doctor-item .doc-details {
+    align-items: center !important;
+  }
+  .panel-split .doctor-item .doc-details .desc {
+    text-align: center !important;
+  }
+
+  /* 8. Specialties Mobile Fixes */
+  .card-specialty {
+    text-align: center !important;
+  }
+  .card-specialty .icon-wrapper {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .card-specialty .learn-more {
+    justify-content: center !important;
+    width: 100% !important;
   }
 }
