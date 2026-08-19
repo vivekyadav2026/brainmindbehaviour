@@ -392,13 +392,18 @@ h6 {
     display: none;
     list-style: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
-    padding: 10px 0;
+    top: 75px;
+    left: 20px;
+    right: 20px;
+    bottom: auto;
+    max-height: calc(100vh - 100px);
+    padding: 15px 0;
     margin: 0;
-    border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
-    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-    box-shadow: none;
+    border-radius: 16px;
+    background: rgba(0, 8, 28, 0.95) !important;
+    border: 1px solid rgba(0, 217, 255, 0.2) !important;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -8533,5 +8538,169 @@ main p:not([class*="text-"]) {
   .card-specialty .learn-more {
     justify-content: center !important;
     width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   PREMIUM HIGH-TECH FOOTER (footer-new)
+   ========================================================================== */
+.footer-new {
+  background-color: #00020a;
+  overflow: hidden;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  position: relative;
+}
+.footer-new .footer-line-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 217, 255, 0.4), transparent);
+}
+.footer-new .footer-radial-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 150px;
+  background: radial-gradient(ellipse at top, rgba(0, 82, 255, 0.12), transparent 70%);
+  pointer-events: none;
+}
+.footer-glass-card {
+  background: rgba(0, 8, 28, 0.65);
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  border-radius: 24px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  margin-bottom: 30px;
+}
+.footer-brand .footer-logo img {
+  max-height: 80px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.05));
+  transition: all 0.3s ease;
+}
+.footer-brand .brand-desc {
+  color: #b0c4de;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+.footer-contact .contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.footer-contact .contact-icon-box {
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.footer-contact .contact-icon-box i {
+  color: #00d9ff;
+  font-size: 14px;
+}
+.footer-contact .contact-text {
+  color: #b0c4de;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.footer-contact .contact-text a {
+  color: #b0c4de;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-contact .contact-text a:hover {
+  color: #00d9ff;
+}
+.footer-links-col h6 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  display: inline-block;
+  position: relative;
+  font-size: 0.95rem;
+}
+.footer-links-col h6::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #00d9ff;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(0, 217, 255, 0.5);
+}
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-nav-list a {
+  color: #b0c4de;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.footer-nav-list a:hover {
+  color: #00d9ff;
+  transform: translateX(5px);
+}
+.footer-credits p {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* Responsive Footer styling integrated */
+@media (max-width: 768px) {
+  .footer-new {
+    padding-top: 50px;
+  }
+  .footer-glass-card {
+    padding: 30px 20px !important;
+    border-radius: 16px !important;
+    margin-bottom: 20px !important;
+  }
+  .footer-brand {
+    text-align: left !important;
+  }
+  .footer-brand .footer-logo {
+    display: block !important;
+  }
+  .footer-contact {
+    display: block !important;
+    text-align: left !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .footer-links-col {
+    text-align: left !important;
+    margin-top: 15px !important;
+  }
+  .footer-links-col h6::after {
+    left: 0 !important;
+    transform: none !important;
+  }
+  .footer-nav-list {
+    align-items: flex-start !important;
+  }
+  .footer-nav-list a:hover {
+    transform: translateX(5px) !important;
   }
 }
