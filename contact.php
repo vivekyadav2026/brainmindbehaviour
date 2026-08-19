@@ -115,6 +115,42 @@ include_once 'includes/header.php';
         </div>
       </div>
 
+      <!-- Visiting Cards Section -->
+      <div class="container mt-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="row section-title justify-content-center text-center mb-4">
+          <div class="col-lg-8">
+            <h2>Clinic Visiting Cards</h2>
+            <p>Save our digital visiting cards for quick reference to phone numbers, timings, and address</p>
+          </div>
+        </div>
+        <div class="row justify-content-center g-4">
+          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card border-0 shadow-sm overflow-hidden bg-white">
+              <div class="bg-primary text-white py-2 px-3 text-center">
+                <span class="fw-bold">Prof. Dr. Ramanand Satapathy Card</span>
+              </div>
+              <div class="p-3 d-flex align-items-center justify-content-center bg-light" style="height: 250px;">
+                <a href="assets/img/card_ramanand.jpg" target="_blank" title="View Full Visiting Card" class="w-100 h-100 d-flex align-items-center justify-content-center">
+                  <img src="assets/img/card_ramanand.jpg" alt="Dr. Ramanand Satapathy Visiting Card" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card border-0 shadow-sm overflow-hidden bg-white">
+              <div class="bg-primary text-white py-2 px-3 text-center">
+                <span class="fw-bold">Dr. Supriya Satapathy Card</span>
+              </div>
+              <div class="p-3 d-flex align-items-center justify-content-center bg-light" style="height: 250px;">
+                <a href="assets/img/card_suprriya.jpg" target="_blank" title="View Full Visiting Card" class="w-100 h-100 d-flex align-items-center justify-content-center">
+                  <img src="assets/img/card_suprriya.jpg" alt="Dr. Supriya Satapathy Visiting Card" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: contain;">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="container-fluid map-container mt-5" data-aos="fade-up" data-aos-delay="200">
         <div class="map-overlay"></div>
         <iframe
