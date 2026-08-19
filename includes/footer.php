@@ -9,9 +9,8 @@
         <div class="row align-items-start">
           <div class="col-lg-5">
             <div class="brand-section">
-              <a href="index.php" class="logo d-flex align-items-center mb-4">
-                <img src="assets/img/logo.png" alt="Brain Mind Behaviour Logo" style="max-height: 40px; margin-right: 10px;">
-                <span class="sitename">Brain Mind Behaviour</span>
+              <a href="index.php" class="logo d-flex align-items-center mb-3">
+                <img src="assets/img/logo.png" alt="Brain Mind Behaviour Logo" style="max-height: 90px;">
               </a>
               <p class="brand-description">Expert psychiatric, neuropsychiatric, and psychological care for individuals and families in Visakhapatnam.</p>
               <div class="contact-info mt-4">
@@ -91,6 +90,16 @@
       </div>
     </div>
   </footer>
+
+  <!-- Floating Call & WhatsApp CTA Widgets -->
+  <div class="floating-ctas">
+    <a href="https://wa.me/919160366716" class="floating-cta whatsapp-float" target="_blank" title="WhatsApp Us">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+    <a href="tel:+919160366716" class="floating-cta call-float" title="Call Us">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+  </div>
 
   <!-- Scroll Top -->
   <a href="#!" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

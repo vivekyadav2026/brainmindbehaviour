@@ -35,7 +35,7 @@ include_once 'includes/header.php';
     <section id="contact" class="contact section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-5">
+        <div class="row g-4">
           <div class="col-lg-5">
             <div class="contact-info-wrapper">
               <div class="contact-info-item" data-aos="fade-up" data-aos-delay="100">

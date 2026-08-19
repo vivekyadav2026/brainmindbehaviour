@@ -18,8 +18,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
     <div class="branding d-flex align-items-center">
       <div class="container position-relative d-flex align-items-center justify-content-between">
         <a href="index.php" class="logo d-flex align-items-center">
-          <img src="assets/img/logo.png" alt="Brain Mind Behaviour Logo" style="max-height: 40px; margin-right: 10px;">
-          <h1 class="sitename" style="font-size: 24px; margin: 0;">Brain Mind Behaviour</h1>
+          <img src="assets/img/logo.png" alt="Brain Mind Behaviour Logo" style="max-height: 80px;">
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -41,10 +40,18 @@ $currentPage = basename($_SERVER['PHP_SELF']);
               </ul>
             </li>
             <li><a href="knowledge-centre.php" class="<?php echo $currentPage == 'knowledge-centre.php' ? 'active' : ''; ?>">Knowledge Centre</a></li>
+            <li class="dropdown"><a href="#!" class="<?php echo in_array($currentPage, ['online-consultation.php', 'onsite-consultation.php']) ? 'active' : ''; ?>"><span>Book Appointment</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="online-consultation.php">Online Video Consultation</a></li>
+                <li><a href="onsite-consultation.php">Onsite Clinic Visit</a></li>
+              </ul>
+            </li>
             <li><a href="contact.php" class="<?php echo $currentPage == 'contact.php' ? 'active' : ''; ?>">Contact</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+
+        <a href="online-consultation.php" class="btn-header-cta d-none d-lg-inline-block">Book Online</a>
       </div>
     </div>
 </header>

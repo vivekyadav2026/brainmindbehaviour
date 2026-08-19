@@ -82,7 +82,7 @@ include_once 'includes/header.php';
             </div>
 
             <div class="mt-5">
-              <a href="contact.php" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Book Consultation</a>
+              <a href="onsite-consultation.php" class="btn btn-primary btn-lg rounded-pill px-5 shadow-sm">Book Appointment</a>
             </div>
           </div>
         </div>

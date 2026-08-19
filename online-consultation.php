@@ -37,8 +37,8 @@ include_once 'includes/header.php';
             <div class="content">
 
 <!-- CONTENT -->
-<section class="py-5 bg-light">
-    <div class="container">
+<section class="py-5 bg-light rounded px-3 px-md-4">
+    <div class="container-fluid px-0">
         <div class="row align-items-start">
             <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
                 <h2 class="mb-4">Telepsychiatry Services</h2>
