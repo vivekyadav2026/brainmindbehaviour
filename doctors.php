@@ -114,12 +114,12 @@ include_once 'includes/header.php';
               </div>
               <div class="doctor-content">
                 <h4>Mr. Dev Satapathy</h4>
-                <span class="specialty">Consultant Psychologist</span>
-                <p>B.Sc. Psychology, M.Sc. Clinical Psychology. Specializes in psychometric assessments, CBT, and individual counseling.</p>
+                <span class="specialty">Counselor</span>
+                <p>M.Sc. Psychology. Specializes in psychometric assessments, CBT, and individual counseling.</p>
                 <div class="doctor-meta">
                   <div class="experience">
                     <i class="bi bi-award"></i>
-                    <span>Clinical Psych.</span>
+                    <span>Psychology</span>
                   </div>
                   <div class="department">
                     <i class="bi bi-building"></i>

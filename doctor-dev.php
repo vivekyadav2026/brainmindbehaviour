@@ -15,7 +15,7 @@ include_once 'includes/header.php';
             <div class="col-lg-8">
               <h1 class="heading-title">Mr. Dev Satapathy</h1>
               <p class="mb-0">
-                Consultant Psychologist
+                Counselor
               </p>
             </div>
           </div>
@@ -40,15 +40,14 @@ include_once 'includes/header.php';
             <div class="bg-light p-4 rounded-4 shadow-sm">
               <h4 class="mb-3">Qualifications</h4>
               <ul class="list-unstyled mb-0">
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> B.Sc. Psychology</li>
-                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> M.Sc. Clinical Psychology</li>
+                <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> M.Sc. Psychology</li>
                 <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Certified CBT Practitioner</li>
               </ul>
             </div>
           </div>
           <div class="col-lg-8">
             <h2 class="mb-4">Biography</h2>
-            <p class="lead">Mr. Dev Satapathy is a dedicated clinical psychologist with a strong academic background.</p>
+            <p class="lead">Mr. Dev Satapathy is a dedicated counselor with a strong academic background.</p>
             <p>He works closely with patients to help them navigate stress, anxiety, depression, and interpersonal conflicts, providing a safe and non-judgmental space for healing and personal growth. He provides professional counseling and psychological support to individuals experiencing emotional difficulties.</p>
             
             <h3 class="mt-5 mb-4">Counselling Areas</h3>
