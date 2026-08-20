@@ -111,41 +111,7 @@ include_once 'includes/header.php';
         </div>
       </div>
 
-      <!-- Visiting Cards Section -->
-      <div class="container mt-5 pt-5" data-aos="fade-up" data-aos-delay="200">
-        <div class="row section-title justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <h2 style="color: #ffffff; font-weight: 800;">Clinic <span style="color: #00d9ff;">Visiting Cards</span></h2>
-            <p style="color: #b0c4de;">Save our digital visiting cards for quick reference to phone numbers, timings, and address.</p>
-          </div>
-        </div>
-        <div class="row justify-content-center g-5">
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="100">
-            <div class="card border-0 overflow-hidden" style="background: rgba(0, 8, 28, 0.65); border: 1px solid rgba(0, 217, 255, 0.2) !important; border-radius: 20px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(0, 217, 255, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.6)';">
-              <div class="py-3 px-4 text-center" style="background: linear-gradient(90deg, rgba(0, 82, 255, 0.3), rgba(0, 217, 255, 0.2)); border-bottom: 1px solid rgba(0, 217, 255, 0.2);">
-                <span class="fw-bold" style="color: #ffffff; font-size: 1.1rem; letter-spacing: 0.5px;">Prof. Dr. Ramanand Satapathy</span>
-              </div>
-              <div class="p-4 d-flex align-items-center justify-content-center" style="height: 280px; background: transparent;">
-                <a href="assets/img/card_ramanand.jpg" target="_blank" title="View Full Visiting Card" class="w-100 h-100 d-flex align-items-center justify-content-center" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                  <img src="assets/img/card_ramanand.jpg" alt="Dr. Ramanand Satapathy Visiting Card" class="img-fluid w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-5" data-aos="zoom-in" data-aos-delay="200">
-            <div class="card border-0 overflow-hidden" style="background: rgba(0, 8, 28, 0.65); border: 1px solid rgba(0, 217, 255, 0.2) !important; border-radius: 20px; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); backdrop-filter: blur(10px); transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 20px 50px rgba(0, 217, 255, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 15px 40px rgba(0, 0, 0, 0.6)';">
-              <div class="py-3 px-4 text-center" style="background: linear-gradient(90deg, rgba(0, 82, 255, 0.3), rgba(0, 217, 255, 0.2)); border-bottom: 1px solid rgba(0, 217, 255, 0.2);">
-                <span class="fw-bold" style="color: #ffffff; font-size: 1.1rem; letter-spacing: 0.5px;">Dr. Suprriya Satapathy</span>
-              </div>
-              <div class="p-4 d-flex align-items-center justify-content-center" style="height: 280px; background: transparent;">
-                <a href="assets/img/card_suprriya.jpg" target="_blank" title="View Full Visiting Card" class="w-100 h-100 d-flex align-items-center justify-content-center" style="border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                  <img src="assets/img/card_suprriya.jpg" alt="Dr. Suprriya Satapathy Visiting Card" class="img-fluid w-100 h-100" style="object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       <div class="container-fluid map-container mt-5" data-aos="fade-up" data-aos-delay="200">
         <div class="map-overlay"></div>

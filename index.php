@@ -144,7 +144,7 @@ include_once 'includes/header.php';
                 <div class="doc-details d-flex flex-column align-items-start">
                   <h4 class="mb-1">Mr. Dev Satapathy</h4>
                   <span class="title">M.Sc Psychology, Counselor</span>
-                  <p class="desc text-muted mb-2">Cognitive Behavioral Therapy (CBT) | Counseling</p>
+                  <p class="desc text-muted mb-2">Counseling</p>
                   <a href="doctor-dev.php" class="btn-doc-profile">View Profile</a>
                 </div>
               </div>
@@ -332,13 +332,13 @@ include_once 'includes/header.php';
     <section id="credentials-gallery" class="credentials-gallery section">
       <div class="container section-title" data-aos="fade-up">
         <h2>Gallery & Credentials</h2>
-        <p>Official certifications and visiting cards of our leadership</p>
+        <p>Official certifications of our leadership</p>
       </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row g-4 justify-content-center">
           <!-- APA Certificate -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="col-lg-6 col-md-8" data-aos="zoom-in" data-aos-delay="100">
             <div class="glass-card overflow-hidden h-100" style="border: 1px solid rgba(0, 217, 255, 0.15) !important;">
               <div class="card-header text-center py-2" style="background: rgba(0, 8, 28, 0.85) !important; border-bottom: 1px solid rgba(0, 217, 255, 0.15) !important;">
                 <span class="small fw-bold text-white">APA International Member Certificate</span>
@@ -351,42 +351,6 @@ include_once 'includes/header.php';
               <div class="card-body text-center py-3">
                 <h5 class="card-title mb-1 fw-bold text-white">American Psychiatric Association</h5>
                 <p class="card-text small text-white-50">Prof. Dr. Ramanand Satapathy - International Member (Since 2011)</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dr. Ramanand Card -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="glass-card overflow-hidden h-100" style="border: 1px solid rgba(0, 217, 255, 0.15) !important;">
-              <div class="card-header text-center py-2" style="background: rgba(0, 8, 28, 0.85) !important; border-bottom: 1px solid rgba(0, 217, 255, 0.15) !important;">
-                <span class="small fw-bold text-white">Dr. Ramanand Satapathy - Card</span>
-              </div>
-              <div class="p-3 d-flex align-items-center justify-content-center bg-dark-deep" style="height: 250px;">
-                <a href="assets/img/card_ramanand.jpg" target="_blank" title="View Full Business Card" class="w-100 h-100 d-flex align-items-center justify-content-center">
-                  <img src="assets/img/card_ramanand.jpg" alt="Dr. Ramanand Satapathy Business Card" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: contain;">
-                </a>
-              </div>
-              <div class="card-body text-center py-3">
-                <h5 class="card-title mb-1 fw-bold text-white">Chief Consultant Visiting Card</h5>
-                <p class="card-text small text-white-50">Contact details, address, and credentials of Dr. Ramanand Satapathy.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dr. Supriya Card -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="glass-card overflow-hidden h-100" style="border: 1px solid rgba(0, 217, 255, 0.15) !important;">
-              <div class="card-header text-center py-2" style="background: rgba(0, 8, 28, 0.85) !important; border-bottom: 1px solid rgba(0, 217, 255, 0.15) !important;">
-                <span class="small fw-bold text-white">Dr. Supriya Satapathy - Card</span>
-              </div>
-              <div class="p-3 d-flex align-items-center justify-content-center bg-dark-deep" style="height: 250px;">
-                <a href="assets/img/card_suprriya.jpg" target="_blank" title="View Full Business Card" class="w-100 h-100 d-flex align-items-center justify-content-center">
-                  <img src="assets/img/card_suprriya.jpg" alt="Dr. Supriya Satapathy Business Card" class="img-fluid" style="max-height: 100%; max-width: 100%; object-fit: contain;">
-                </a>
-              </div>
-              <div class="card-body text-center py-3">
-                <h5 class="card-title mb-1 fw-bold text-white">Consultant Psychiatrist Visiting Card</h5>
-                <p class="card-text small text-white-50">Contact details, address, and timings of Dr. Supriya Satapathy.</p>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@
 
 /* Global Colors */
 :root { 
-  --background-color: #00040f; /* Deep dark background */
+  --background-color: #0a1931; /* Premium Navy Blue background */
   --default-color: #b0c4de; /* Soft light blue/grey for text */
   --heading-color: #ffffff; /* White for headings */
   --accent-color: #0052ff; /* Deep neon blue */
@@ -7385,7 +7385,7 @@ section,
 }
 
 .hero-new {
-  background-color: #00040f;
+  background-color: #0a1931;
   background-image: radial-gradient(circle at 80% 20%, rgba(0, 82, 255, 0.15) 0%, transparent 50%),
                     radial-gradient(circle at 20% 80%, rgba(0, 217, 255, 0.08) 0%, transparent 50%);
   padding: 140px 0 60px 0 !important;
@@ -7493,7 +7493,7 @@ section,
 
 /* Specialty Section Styles */
 .specialties-section {
-  background-color: #00040f;
+  background-color: #0a1931;
   padding: 60px 0;
 }
 
@@ -8164,7 +8164,7 @@ section,
 
 /* Footer Styling (using .footer-16 for specificity) */
 .footer-16 {
-  background-color: #00040f !important;
+  background-color: #0a1931 !important;
   border-top: 1px solid rgba(0, 217, 255, 0.1) !important;
   color: #b0c4de !important;
 }
@@ -8208,7 +8208,7 @@ section,
 
 /* 1. Page Titles & Breadcrumbs */
 .page-title {
-  background: radial-gradient(ellipse at center bottom, rgba(0, 82, 255, 0.2) 0%, #00040f 100%) !important;
+  background: radial-gradient(ellipse at center bottom, rgba(0, 82, 255, 0.2) 0%, #0a1931 100%) !important;
   border-bottom: 1px solid rgba(0, 217, 255, 0.1) !important;
   position: relative;
   overflow: hidden;
@@ -8251,7 +8251,7 @@ section,
 
 /* 2. Global Section Backgrounds */
 .about, .services, .doctors, .contact, .department, .section {
-  background-color: #00040f !important;
+  background-color: #0a1931 !important;
 }
 
 /* 3. Glassmorphic Cards (Service Items, Doctor Cards, General Cards) */
@@ -8756,7 +8756,7 @@ main p:not([class*="text-"]) {
 
 /* Enable transparency so z-index: -1 fixed canvas is visible behind content */
 html {
-  background-color: #00040f !important;
+  background-color: #0a1931 !important;
 }
 
 body {

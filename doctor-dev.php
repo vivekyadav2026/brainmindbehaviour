@@ -41,7 +41,7 @@ include_once 'includes/header.php';
               <h4 class="mb-3">Qualifications</h4>
               <ul class="list-unstyled mb-0">
                 <li class="mb-2"><i class="bi bi-check-circle-fill text-primary me-2"></i> M.Sc. Psychology</li>
-                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Certified CBT Practitioner</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Professional Counseling</li>
               </ul>
             </div>
           </div>
@@ -52,12 +52,6 @@ include_once 'includes/header.php';
             
             <h3 class="mt-5 mb-4">Counselling Areas</h3>
             <div class="row">
-              <div class="col-md-6 mb-3">
-                <div class="d-flex align-items-center bg-light p-3 rounded shadow-sm">
-                  <i class="bi bi-arrow-right-circle-fill text-primary me-3 fs-4"></i>
-                  <span>Cognitive Behavioral Therapy (CBT)</span>
-                </div>
-              </div>
               <div class="col-md-6 mb-3">
                 <div class="d-flex align-items-center bg-light p-3 rounded shadow-sm">
                   <i class="bi bi-arrow-right-circle-fill text-primary me-3 fs-4"></i>
