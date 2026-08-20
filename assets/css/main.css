@@ -7414,10 +7414,11 @@ section,
 
 .hero-new .subtitle {
   color: #00d9ff;
-  font-size: 16px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  margin-bottom: 16px;
   text-transform: uppercase;
 }
 
@@ -8501,8 +8502,10 @@ main p:not([class*="text-"]) {
     text-align: center !important;
   }
   .hero-new .subtitle {
-    font-size: 14px !important;
+    font-size: 17px !important;
+    line-height: 1.4 !important;
     text-align: center !important;
+    margin-bottom: 18px !important;
   }
   .hero-new .hero-description {
     font-size: 15px !important;

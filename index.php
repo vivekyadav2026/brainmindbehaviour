@@ -12,7 +12,8 @@ include_once 'includes/header.php';
             <div class="hero-content text-center text-lg-start">
               
               <div class="subtitle" data-aos="fade-right" data-aos-delay="200">
-                Brain Mind Behaviour Neurosciences Research Institute
+                Brain Mind Behaviour<br/>
+                Neurosciences Research Institute
               </div>
 
               <h1 data-aos="fade-right" data-aos-delay="300">
