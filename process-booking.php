@@ -19,6 +19,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $appointment_id = $pdo->lastInsertId();
 
+    // --- Send Email Notification ---
+    require_once 'includes/mailer.php';
+    try {
+        $mail = getMailer();
+        global $CLINIC_EMAIL;
+        
+        $mail->addAddress($CLINIC_EMAIL);
+        if (!empty($patient_email)) {
+            $mail->addReplyTo($patient_email, $patient_name);
+        }
+        
+        $mail->isHTML(true);
+        $mail->Subject = "New Appointment Booking Initiated: $patient_name";
+        
+        $emailBody = "<h3>New Appointment Booking Started</h3>";
+        $emailBody .= "<p><strong>Patient Name:</strong> {$patient_name}</p>";
+        $emailBody .= "<p><strong>Phone:</strong> {$patient_phone}</p>";
+        $emailBody .= "<p><strong>Email:</strong> {$patient_email}</p>";
+        $emailBody .= "<p><strong>Consultation Type:</strong> " . ucfirst($appointment_type) . "</p>";
+        $emailBody .= "<p><strong>Date:</strong> {$appointment_date}</p>";
+        $emailBody .= "<p><strong>Time:</strong> {$appointment_time}</p>";
+        $emailBody .= "<p><strong>Status:</strong> Pending Payment (Checkout Initiated)</p>";
+        
+        $mail->Body    = $emailBody;
+        $mail->AltBody = strip_tags($emailBody);
+        $mail->send();
+    } catch (Exception $e) {
+        // Silently fail if email doesn't send, so the checkout process isn't interrupted for the patient
+    }
+    // -------------------------------
+
     // Razorpay Keys (Replace with your actual keys)
     $keyId = 'rzp_test_YOUR_KEY_HERE';
     

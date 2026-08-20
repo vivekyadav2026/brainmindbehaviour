@@ -116,5 +116,109 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js?v=<?php echo filemtime(dirname(__DIR__) . '/assets/js/main.js'); ?>"></script>
+  <!-- Lead Capture Popup Modal -->
+  <div class="modal fade" id="leadModal" tabindex="-1" aria-labelledby="leadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content booking-light-theme" style="border: none; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
+        <div class="modal-header border-0 pb-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body px-4 px-sm-5 pb-5 pt-0">
+          <div class="text-center mb-4">
+            <h4 class="fw-bold text-dark mb-2" id="leadModalLabel">How can we help you?</h4>
+            <p class="text-muted small mb-0">Leave your details and our team will get back to you shortly.</p>
+          </div>
+          <form id="leadCaptureForm">
+            <div id="leadFormAlert" class="alert d-none small"></div>
+            <div class="mb-3">
+              <input type="text" class="form-control" name="name" placeholder="Your Name *" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" name="phone" placeholder="Phone Number *" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" name="email" placeholder="Email Address (Optional)">
+            </div>
+            <div class="mb-4">
+              <textarea class="form-control" name="message" rows="2" placeholder="Briefly describe your query (Optional)"></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary rounded-pill py-2 fw-bold" id="leadSubmitBtn" style="background-color: #00d9ff; border-color: #00d9ff; color: #fff; box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4);">
+                Request Callback
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Show popup after 1.5 seconds if not already shown in this session
+        if (!sessionStorage.getItem('lead_popup_shown')) {
+            console.log("Triggering lead popup in 1.5 seconds...");
+            setTimeout(function() {
+                var modalElement = document.getElementById('leadModal');
+                if (modalElement) {
+                    var myModal = new bootstrap.Modal(modalElement, {
+                        keyboard: false
+                    });
+                    myModal.show();
+                    sessionStorage.setItem('lead_popup_shown', 'true');
+                }
+            }, 1500);
+        } else {
+            console.log("Lead popup already shown in this session.");
+        }
+
+        // Handle form submission via AJAX
+        document.getElementById('leadCaptureForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
+            var submitBtn = document.getElementById('leadSubmitBtn');
+            var alertBox = document.getElementById('leadFormAlert');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
+            alertBox.classList.add('d-none');
+            alertBox.classList.remove('alert-success', 'alert-danger');
+
+            var formData = new FormData(form);
+
+            fetch('process-lead.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                alertBox.classList.remove('d-none');
+                if (data.status === 'success') {
+                    alertBox.classList.add('alert-success');
+                    alertBox.innerHTML = data.message;
+                    form.reset();
+                    // Hide modal after 3 seconds on success
+                    setTimeout(function() {
+                        var modalInstance = bootstrap.Modal.getInstance(document.getElementById('leadModal'));
+                        modalInstance.hide();
+                    }, 3000);
+                } else {
+                    alertBox.classList.add('alert-danger');
+                    alertBox.innerHTML = data.message;
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Request Callback';
+                }
+            })
+            .catch(error => {
+                alertBox.classList.remove('d-none');
+                alertBox.classList.add('alert-danger');
+                alertBox.innerHTML = 'Network error. Please try again.';
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Request Callback';
+            });
+        });
+    });
+  </script>
 </body>
 </html>

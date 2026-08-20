@@ -8799,3 +8799,30 @@ section h1, section h2, section h3, section h4, section h5, section h6,
 .content-body h1, .content-body h2, .content-body h3, .content-body h4, .content-body h5, .content-body h6 {
   color: #ffffff !important;
 }
+
+/* Dedicated Light Theme for Booking Page (Overrides Dark Theme) */
+.booking-light-theme {
+  background-color: #f4f7f9 !important;
+  position: relative;
+  z-index: 10;
+}
+.booking-light-theme p, .booking-light-theme li, .booking-light-theme .text-muted {
+  color: #4b5563 !important;
+}
+.booking-light-theme h1, .booking-light-theme h2, .booking-light-theme h3, .booking-light-theme h4, .booking-light-theme h5, .booking-light-theme h6, .booking-light-theme .text-dark {
+  color: #111827 !important;
+}
+.booking-light-theme .form-control, .booking-light-theme .form-select {
+  background-color: #ffffff !important;
+  border: 1px solid #ced4da !important;
+  color: #111827 !important;
+}
+.booking-light-theme .form-control::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+.booking-light-theme .card, .booking-light-theme .bg-white {
+  background-color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+}

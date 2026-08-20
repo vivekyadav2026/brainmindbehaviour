@@ -77,7 +77,7 @@ include_once 'includes/header.php';
               <h2 style="color: #ffffff; font-weight: 800; margin-bottom: 15px;">Send us a <span style="color: #00d9ff;">Message</span></h2>
               <p class="mb-4" style="color: #b0c4de; font-size: 1rem;">Have questions or want to learn more? Reach out to us and our team will get back to you shortly.</p>
 
-              <form action="#" method="post" class="php-email-form bg-transparent p-0 border-0 shadow-none">
+              <form action="process-contact.php" method="post" class="php-email-form bg-transparent p-0 border-0 shadow-none">
                 <div class="row g-4">
                   <div class="col-md-6">
                     <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required="" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; border-radius: 8px; padding: 12px 15px;">

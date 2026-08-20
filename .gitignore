@@ -1,0 +1,2 @@
+# Ignore secure credentials configuration file
+smtp_config.php

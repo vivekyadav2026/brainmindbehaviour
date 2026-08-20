@@ -33,11 +33,16 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <li><a href="doctors.php" class="<?php echo $currentPage == 'doctors.php' ? 'active' : ''; ?>">OUR TEAM</a></li>
             <li><a href="knowledge-centre.php" class="<?php echo $currentPage == 'knowledge-centre.php' ? 'active' : ''; ?>">KNOWLEDGE CENTRE</a></li>
             <li><a href="contact.php" class="<?php echo $currentPage == 'contact.php' ? 'active' : ''; ?>">CONTACT</a></li>
+            <li class="d-xl-none mt-3 px-3">
+              <a href="book-appointment.php" class="btn btn-primary text-white rounded-pill px-4 py-2 w-100 text-center" style="background-color: #00d9ff; border-color: #00d9ff; box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4);">
+                <i class="far fa-calendar-check me-2"></i>BOOK APPOINTMENT
+              </a>
+            </li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list text-white fs-2"></i>
         </nav>
 
-        <a href="onsite-consultation.php" class="btn-header-cta d-none d-xl-inline-flex align-items-center">
+        <a href="book-appointment.php" class="btn-header-cta d-none d-xl-inline-flex align-items-center">
           <i class="far fa-calendar-check me-2"></i>BOOK APPOINTMENT
         </a>
       </div>
