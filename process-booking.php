@@ -19,7 +19,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     $appointment_id = $pdo->lastInsertId();
 
-    // --- Send Email Notification ---
+    // If On-Site consultation, confirm immediately and bypass online payment
+    if ($appointment_type === 'onsite') {
+        $stmt = $pdo->prepare("UPDATE appointments SET status = 'confirmed', payment_status = 'pay_at_clinic' WHERE id = ?");
+        $stmt->execute([$appointment_id]);
+
+        // Send Email Confirmation
+        require_once 'includes/mailer.php';
+        try {
+            $mail = getMailer();
+            global $CLINIC_EMAIL;
+
+            $mail->addAddress($CLINIC_EMAIL);
+            if (!empty($patient_email)) {
+                $mail->addAddress($patient_email);
+                $mail->addReplyTo($patient_email, $patient_name);
+            }
+
+            $mail->isHTML(true);
+            $mail->Subject = "Appointment Confirmed (On-Site): $patient_name";
+
+            $emailBody = "<h3>Appointment Booking Confirmed (On-Site)</h3>";
+            $emailBody .= "<p><strong>Appointment ID:</strong> #{$appointment_id}</p>";
+            $emailBody .= "<p><strong>Patient Name:</strong> {$patient_name}</p>";
+            $emailBody .= "<p><strong>Phone:</strong> {$patient_phone}</p>";
+            if (!empty($patient_email)) {
+                $emailBody .= "<p><strong>Email:</strong> {$patient_email}</p>";
+            }
+            $emailBody .= "<p><strong>Consultation Type:</strong> On-Site (At Clinic)</p>";
+            $emailBody .= "<p><strong>Date:</strong> {$appointment_date}</p>";
+            $emailBody .= "<p><strong>Time:</strong> {$appointment_time}</p>";
+            $emailBody .= "<p><strong>Payment Status:</strong> Pay at Clinic (₹1,000)</p>";
+
+            $mail->Body    = $emailBody;
+            $mail->AltBody = strip_tags($emailBody);
+            $mail->send();
+        } catch (Exception $e) {
+            // Silently ignore email failures
+        }
+
+        header("Location: booking-success.php?id=" . $appointment_id);
+        exit;
+    }
+
+    // --- Otherwise (Online Video Call), Send Email Notification for Initiation ---
     require_once 'includes/mailer.php';
     try {
         $mail = getMailer();
@@ -31,13 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         $mail->isHTML(true);
-        $mail->Subject = "New Appointment Booking Initiated: $patient_name";
+        $mail->Subject = "New Online Appointment Booking Initiated: $patient_name";
         
-        $emailBody = "<h3>New Appointment Booking Started</h3>";
+        $emailBody = "<h3>New Online Appointment Booking Started</h3>";
         $emailBody .= "<p><strong>Patient Name:</strong> {$patient_name}</p>";
         $emailBody .= "<p><strong>Phone:</strong> {$patient_phone}</p>";
         $emailBody .= "<p><strong>Email:</strong> {$patient_email}</p>";
-        $emailBody .= "<p><strong>Consultation Type:</strong> " . ucfirst($appointment_type) . "</p>";
+        $emailBody .= "<p><strong>Consultation Type:</strong> Online (Video Call)</p>";
         $emailBody .= "<p><strong>Date:</strong> {$appointment_date}</p>";
         $emailBody .= "<p><strong>Time:</strong> {$appointment_time}</p>";
         $emailBody .= "<p><strong>Status:</strong> Pending Payment (Checkout Initiated)</p>";
@@ -46,9 +89,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail->AltBody = strip_tags($emailBody);
         $mail->send();
     } catch (Exception $e) {
-        // Silently fail if email doesn't send, so the checkout process isn't interrupted for the patient
+        // Silently ignore
     }
-    // -------------------------------
+    // -----------------------------------------------------------------------------
 
     // Razorpay Keys (Replace with your actual keys)
     $keyId = 'rzp_test_YOUR_KEY_HERE';

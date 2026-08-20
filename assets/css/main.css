@@ -8813,9 +8813,16 @@ section h1, section h2, section h3, section h4, section h5, section h6,
   color: #111827 !important;
 }
 .booking-light-theme .form-control, .booking-light-theme .form-select {
-  background-color: #ffffff !important;
-  border: 1px solid #ced4da !important;
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
   color: #111827 !important;
+  transition: all 0.3s ease !important;
+}
+.booking-light-theme .form-control:focus, .booking-light-theme .form-select:focus {
+  background-color: #ffffff !important;
+  border-color: #00d9ff !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 217, 255, 0.25) !important;
+  outline: none !important;
 }
 .booking-light-theme .form-control::placeholder {
   color: #6b7280 !important;
@@ -8825,4 +8832,111 @@ section h1, section h2, section h3, section h4, section h5, section h6,
   background-color: #ffffff !important;
   border: none !important;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important;
+}
+
+/* Specific Contact Page Light Theme Overrides */
+.booking-light-theme .contact .contact-info-item, 
+.booking-light-theme .contact .contact-form-card {
+  background: #ffffff !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+}
+
+.booking-light-theme .contact .map-container iframe {
+  filter: none !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
+  border-radius: 20px !important;
+}
+
+.booking-light-theme .contact .php-email-form input,
+.booking-light-theme .contact .php-email-form textarea,
+.booking-light-theme .contact .contact-form-card .form-control {
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  color: #111827 !important;
+}
+
+.booking-light-theme .contact .php-email-form input:focus,
+.booking-light-theme .contact .php-email-form textarea:focus,
+.booking-light-theme .contact .contact-form-card .form-control:focus {
+  background-color: #ffffff !important;
+  border-color: #00d9ff !important;
+  box-shadow: 0 0 0 0.25rem rgba(0, 217, 255, 0.25) !important;
+  color: #111827 !important;
+}
+
+.booking-light-theme .contact .php-email-form input::placeholder,
+.booking-light-theme .contact .php-email-form textarea::placeholder,
+.booking-light-theme .contact .contact-form-card .form-control::placeholder {
+  color: #6b7280 !important;
+  opacity: 1 !important;
+}
+
+.booking-light-theme .contact .contact-info-item .info-content h3, 
+.booking-light-theme .contact .contact-form-card h2,
+.booking-light-theme .contact .contact-form-card h3 {
+  color: #111827 !important;
+}
+
+.booking-light-theme .contact .contact-info-item .info-content p, 
+.booking-light-theme .contact .contact-form-card p {
+  color: #4b5563 !important;
+}
+
+/* Page Title Light Theme Overrides */
+.booking-light-theme .page-title {
+  background: #f8fafc !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+.booking-light-theme .page-title::before {
+  display: none !important;
+}
+.booking-light-theme .page-title .heading {
+  padding: 60px 0 40px 0 !important;
+}
+.booking-light-theme .page-title .heading h1, 
+.booking-light-theme .page-title .heading-title {
+  color: #0f172a !important;
+  text-shadow: none !important;
+}
+.booking-light-theme .page-title .heading p {
+  color: #475569 !important;
+}
+.booking-light-theme .page-title nav.breadcrumbs {
+  background: #f1f5f9 !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+.booking-light-theme .page-title nav.breadcrumbs ol li a {
+  color: #0d6efd !important;
+}
+.booking-light-theme .page-title nav.breadcrumbs ol li.current {
+  color: #475569 !important;
+}
+.booking-light-theme .page-title nav.breadcrumbs ol li+li::before {
+  color: #cbd5e1 !important;
+}
+
+/* Global Light Theme Helper Overrides */
+.booking-light-theme .bg-light,
+.booking-light-theme.main .bg-light {
+  background-color: #f8fafc !important;
+  color: #4b5563 !important;
+  border-color: #e2e8f0 !important;
+  backdrop-filter: none !important;
+}
+
+.booking-light-theme .text-dark,
+.booking-light-theme.main .text-dark {
+  color: #0f172a !important;
+}
+
+.booking-light-theme .text-muted,
+.booking-light-theme.main .text-muted {
+  color: #64748b !important;
+}
+
+.booking-light-theme .border-light,
+.booking-light-theme.main .border-light {
+  border-color: #e2e8f0 !important;
 }

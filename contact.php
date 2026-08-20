@@ -5,7 +5,8 @@ $bodyClass = 'contact-page';
 include_once 'includes/header.php';
 ?>
 
-  <main class="main">
+  <!-- Apply booking-light-theme to force light background over global dark theme -->
+  <main class="main booking-light-theme" style="min-height: 100vh;">
 
     <!-- Page Title -->
     <div class="page-title">
@@ -32,67 +33,80 @@ include_once 'includes/header.php';
     </div><!-- End Page Title -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
+    <section id="contact" class="contact py-5">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row g-4">
+        <div class="row g-4 justify-content-center">
+          
           <div class="col-lg-5">
-            <div class="contact-info-wrapper">
-              <div class="contact-info-item position-relative mb-4" data-aos="fade-up" data-aos-delay="100" style="background: rgba(0, 8, 28, 0.65); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 217, 255, 0.15); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); transition: all 0.3s ease;">
-                <div class="info-icon" style="width: 50px; height: 50px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(0, 217, 255, 0.2);">
-                  <i class="bi bi-geo-alt" style="font-size: 1.5rem; color: #00d9ff;"></i>
+            <div class="contact-info-wrapper h-100">
+              
+              <!-- Address Box -->
+              <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="100">
+                <div class="me-4 flex-shrink-0">
+                  <div style="width: 50px; height: 50px; background-color: #e0f7fa; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-geo-alt fs-4 text-primary"></i>
+                  </div>
                 </div>
-                <div class="info-content">
-                  <h3 style="color: #ffffff; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;">Clinic Address</h3>
-                  <p style="color: #b0c4de; font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">101, Coastal Park Apartments, Coastal Battery Road, Opposite Naval Coastal Battery, Maharani Peta, Visakhapatnam, Andhra Pradesh – 530002</p>
-                </div>
-              </div>
-
-              <div class="contact-info-item position-relative mb-4" data-aos="fade-up" data-aos-delay="200" style="background: rgba(0, 8, 28, 0.65); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 217, 255, 0.15); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); transition: all 0.3s ease;">
-                <div class="info-icon" style="width: 50px; height: 50px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(0, 217, 255, 0.2);">
-                  <i class="bi bi-telephone" style="font-size: 1.5rem; color: #00d9ff;"></i>
-                </div>
-                <div class="info-content">
-                  <h3 style="color: #ffffff; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;">Phone Number</h3>
-                  <p style="margin-bottom: 5px;"><a href="tel:+919160366716" style="color: #00d9ff; font-weight: 600; font-size: 1.1rem; text-decoration: none;">+91 91603 66716</a></p>
-                  <p style="color: #b0c4de; font-size: 0.9rem; margin-bottom: 0;">Call to book an appointment</p>
+                <div>
+                  <h4 class="fw-bold text-dark mb-2">Clinic Address</h4>
+                  <p class="text-muted mb-0 small">101, Coastal Park Apartments, Coastal Battery Road, Opposite Naval Coastal Battery, Maharani Peta, Visakhapatnam, Andhra Pradesh – 530002</p>
                 </div>
               </div>
 
-              <div class="contact-info-item position-relative mb-4" data-aos="fade-up" data-aos-delay="300" style="background: rgba(0, 8, 28, 0.65); padding: 30px; border-radius: 20px; border: 1px solid rgba(0, 217, 255, 0.15); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px); transition: all 0.3s ease;">
-                <div class="info-icon" style="width: 50px; height: 50px; background: rgba(0, 217, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 1px solid rgba(0, 217, 255, 0.2);">
-                  <i class="bi bi-whatsapp" style="font-size: 1.5rem; color: #00d9ff;"></i>
+              <!-- Phone Box -->
+              <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="200">
+                <div class="me-4 flex-shrink-0">
+                  <div style="width: 50px; height: 50px; background-color: #e0f7fa; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-telephone fs-4 text-primary"></i>
+                  </div>
                 </div>
-                <div class="info-content">
-                  <h3 style="color: #ffffff; font-size: 1.2rem; font-weight: 700; margin-bottom: 10px;">WhatsApp</h3>
-                  <p style="margin-bottom: 5px;"><a href="https://wa.me/919160366716" style="color: #00d9ff; font-weight: 600; font-size: 1.1rem; text-decoration: none;" target="_blank">Chat with us</a></p>
-                  <p style="color: #b0c4de; font-size: 0.9rem; margin-bottom: 0;">Message us anytime</p>
+                <div>
+                  <h4 class="fw-bold text-dark mb-2">Phone Number</h4>
+                  <p class="mb-1"><a href="tel:+919160366716" class="text-primary fw-bold text-decoration-none">+91 91603 66716</a></p>
+                  <p class="text-muted mb-0 small">Call to book an appointment</p>
                 </div>
               </div>
+
+              <!-- WhatsApp Box -->
+              <div class="bg-white p-4 rounded-4 shadow-sm border border-light mb-4 d-flex align-items-start" data-aos="fade-up" data-aos-delay="300">
+                <div class="me-4 flex-shrink-0">
+                  <div style="width: 50px; height: 50px; background-color: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                    <i class="bi bi-whatsapp fs-4 text-success"></i>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="fw-bold text-dark mb-2">WhatsApp</h4>
+                  <p class="mb-1"><a href="https://wa.me/919160366716" class="text-success fw-bold text-decoration-none" target="_blank">Chat with us</a></p>
+                  <p class="text-muted mb-0 small">Message us anytime</p>
+                </div>
+              </div>
+              
             </div>
           </div>
 
           <div class="col-lg-7">
-            <div class="contact-form-card" data-aos="fade-up" data-aos-delay="200" style="background: rgba(0, 8, 28, 0.65); padding: 40px; border-radius: 24px; border: 1px solid rgba(0, 217, 255, 0.15); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5); backdrop-filter: blur(10px);">
-              <h2 style="color: #ffffff; font-weight: 800; margin-bottom: 15px;">Send us a <span style="color: #00d9ff;">Message</span></h2>
-              <p class="mb-4" style="color: #b0c4de; font-size: 1rem;">Have questions or want to learn more? Reach out to us and our team will get back to you shortly.</p>
+            <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border border-light h-100" data-aos="fade-up" data-aos-delay="200">
+              <div class="mb-4">
+                <h3 class="fw-bold text-dark mb-2">Send us a <span class="text-primary">Message</span></h3>
+                <p class="text-muted small">Have questions or want to learn more? Reach out to us and our team will get back to you shortly.</p>
+              </div>
 
-              <form action="process-contact.php" method="post" class="php-email-form bg-transparent p-0 border-0 shadow-none">
-                <div class="row g-4">
+              <form action="process-contact.php" method="post" class="php-email-form">
+                <div class="row g-3">
                   <div class="col-md-6">
-                    <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required="" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; border-radius: 8px; padding: 12px 15px;">
+                    <input type="text" class="form-control bg-light border-0" name="name" id="name" placeholder="Your Name *" required>
                   </div>
 
                   <div class="col-md-6">
-                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; border-radius: 8px; padding: 12px 15px;">
+                    <input type="email" class="form-control bg-light border-0" name="email" id="email" placeholder="Your Email *" required>
                   </div>
 
                   <div class="col-12">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; border-radius: 8px; padding: 12px 15px;">
+                    <input type="text" class="form-control bg-light border-0" name="subject" id="subject" placeholder="Subject *" required>
                   </div>
 
                   <div class="col-12">
-                    <textarea class="form-control" name="message" id="message" placeholder="Your Message" rows="6" required="" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; border-radius: 8px; padding: 12px 15px;"></textarea>
+                    <textarea class="form-control bg-light border-0" name="message" id="message" placeholder="Your Message *" rows="6" required></textarea>
                   </div>
 
                   <div class="col-12">
@@ -101,8 +115,12 @@ include_once 'includes/header.php';
                     <div class="sent-message">Your message has been sent. Thank you!</div>
                   </div>
 
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-submit" style="background: linear-gradient(135deg, #0052ff, #00d9ff); color: #ffffff; border: none; border-radius: 8px; padding: 14px 30px; font-weight: 600; box-shadow: 0 10px 20px rgba(0, 82, 255, 0.3); width: 100%; transition: all 0.3s ease;">Send Message</button>
+                  <div class="col-12 mt-4">
+                    <div class="d-grid">
+                      <button type="submit" class="btn btn-primary rounded-pill py-3 fw-bold" style="background-color: #0d6efd; border-color: #0d6efd; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);">
+                        <i class="far fa-paper-plane me-2"></i> Send Message
+                      </button>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -111,16 +129,13 @@ include_once 'includes/header.php';
         </div>
       </div>
 
-
-
-      <div class="container-fluid map-container mt-5" data-aos="fade-up" data-aos-delay="200">
-        <div class="map-overlay"></div>
+      <!-- Google Maps Embed -->
+      <div class="container-fluid map-container mt-5 px-0" data-aos="fade-up" data-aos-delay="200">
         <iframe
           src="https://maps.google.com/maps?q=Brain+Mind+Behaviour+Neurosciences+Research+Institute+Visakhapatnam&t=&z=15&ie=UTF8&iwloc=&output=embed"
-          width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+          width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
-
     </section><!-- /Contact Section -->
 
   </main>
