@@ -1,4 +1,10 @@
 <?php
+// Prevent browser caching of HTML/PHP pages
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
+
 // includes/header.php
 $siteTitle = $siteTitle ?? 'Brain Mind Behaviour Neurosciences Research Institute';
 $metaDescription = $metaDescription ?? 'Specialist psychiatric, neuropsychiatric and psychological care for individuals and families in Visakhapatnam.';
@@ -29,8 +35,8 @@ $bodyClass = $bodyClass ?? 'index-page';
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css?v=<?php echo filemtime('assets/css/main.css'); ?>" rel="stylesheet">
+  <!-- Main CSS File with Absolute Path Cache Buster -->
+  <link href="assets/css/main.css?v=<?php echo filemtime(dirname(__DIR__) . '/assets/css/main.css'); ?>" rel="stylesheet">
 </head>
 <body class="<?php echo htmlspecialchars($bodyClass); ?>">
   <!-- Global interactive neural background -->
