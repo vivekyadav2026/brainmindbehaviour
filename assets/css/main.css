@@ -8769,3 +8769,33 @@ body {
 main.main, section, .section, #hero, .hero-new {
   background-color: transparent !important;
 }
+
+/* Global Text Contrast & Readability overrides on dark backgrounds */
+.text-muted, .text-black-50 {
+  color: #b0c4de !important; /* Lighter soft grey-blue */
+}
+.text-white-50 {
+  color: rgba(255, 255, 255, 0.75) !important; /* Lighter semi-transparent white */
+}
+.text-dark, .text-black {
+  color: #ffffff !important; /* Force dark text to be white */
+}
+.form-control {
+  color: #ffffff !important;
+}
+.form-control::placeholder {
+  color: #b0c4de !important;
+  opacity: 0.85 !important;
+}
+
+/* Elevate default body copy readability inside sections and blocks */
+section p, .section p, section li, .section li, .content-body p, .content-body li {
+  color: #d8e6f5 !important; /* Highly legible soft light silver-blue */
+  font-size: 1.05rem !important; /* Slightly larger readability scale */
+  line-height: 1.65 !important;
+}
+section h1, section h2, section h3, section h4, section h5, section h6,
+.section h1, .section h2, .section h3, .section h4, .section h5, .section h6,
+.content-body h1, .content-body h2, .content-body h3, .content-body h4, .content-body h5, .content-body h6 {
+  color: #ffffff !important;
+}
