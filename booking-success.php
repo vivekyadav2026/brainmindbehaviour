@@ -55,7 +55,7 @@ include_once 'includes/header.php';
                             <div class="col-6 text-dark"><?php echo htmlspecialchars($appointment['appointment_time']); ?></div>
                             
                             <div class="col-6"><strong>Payment Status:</strong></div>
-                            <div class="col-6 text-primary fw-bold">Pay at Clinic (₹1,000)</div>
+                            <div class="col-6 text-primary fw-bold">Pay at Clinic (₹2,000)</div>
                         </div>
                     </div>
                 </div>

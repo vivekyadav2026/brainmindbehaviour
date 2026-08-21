@@ -66,7 +66,7 @@ function sendAppointmentEmail($app) {
                         </tr>
                         <tr>
                             <th>Payment Status</th>
-                            <td>Paid Online (₹1,000)</td>
+                            <td>Paid Online (₹2,000)</td>
                         </tr>
                         <tr>
                             <th>Razorpay Payment ID</th>
