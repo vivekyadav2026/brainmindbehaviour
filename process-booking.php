@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $emailBody .= "<p><strong>Consultation Type:</strong> On-Site (At Clinic)</p>";
             $emailBody .= "<p><strong>Date:</strong> {$appointment_date}</p>";
             $emailBody .= "<p><strong>Time:</strong> {$appointment_time}</p>";
-            $emailBody .= "<p><strong>Payment Status:</strong> Pay at Clinic (₹1,000)</p>";
+            $emailBody .= "<p><strong>Payment Status:</strong> Pay at Clinic (₹2,000)</p>";
 
             $mail->Body    = $emailBody;
             $mail->AltBody = strip_tags($emailBody);
@@ -117,7 +117,7 @@ include_once 'includes/header.php';
                 <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border border-light text-center">
                     
                     <h2 class="fw-bold text-dark mb-3">Secure Payment</h2>
-                    <p class="text-muted mb-4">Complete your booking by paying the consultation fee of <strong>₹1,000</strong> via UPI QR Code.</p>
+                    <p class="text-muted mb-4">Complete your booking by paying the consultation fee of <strong>₹2,000</strong> via UPI QR Code.</p>
                     
                     <div class="row justify-content-center align-items-center g-4 mb-5">
                         <!-- Left: QR Code -->
@@ -127,7 +127,7 @@ include_once 'includes/header.php';
                                     <img src="assets/img/clinic_qr.jpg" alt="UPI QR Code" class="img-fluid" style="max-width: 220px; border-radius: 8px;">
                                 </a>
                                 <div class="mt-2 text-dark fw-bold small">
-                                    Scan or Tap to Pay ₹1,000
+                                    Scan or Tap to Pay ₹2,000
                                 </div>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ include_once 'includes/header.php';
                                 <h6 class="fw-bold text-dark mb-3"><i class="fas fa-info-circle text-primary me-2"></i>Payment Instructions:</h6>
                                 <ol class="small text-muted ps-3 mb-0" style="line-height: 1.6;">
                                     <li class="mb-2">Open GPay, PhonePe, Paytm, or any UPI app on your phone.</li>
-                                    <li class="mb-2">Scan the QR code on the left and complete the payment of <strong>₹1,000</strong>.</li>
+                                    <li class="mb-2">Scan the QR code on the left and complete the payment of <strong>₹2,000</strong>.</li>
                                     <li class="mb-2">Enter <code><?php echo htmlspecialchars($CLINIC_UPI_ID); ?></code> manually if you are booking on mobile and can't scan.</li>
                                     <li class="mb-2">Save the payment confirmation screenshot on your device.</li>
                                 </ol>
