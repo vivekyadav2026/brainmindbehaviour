@@ -1,8 +1,8 @@
 <?php
 require_once 'includes/db.php';
 
-// Hardcoded Consultation Fee (e.g., 1000 INR)
-$consultation_fee = 1000;
+// Dynamic Consultation Fee from database
+$consultation_fee = $CONSULTATION_FEE;
 $fee_in_paise = $consultation_fee * 100;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -93,80 +93,99 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     // -----------------------------------------------------------------------------
 
-    // Razorpay Keys (Replace with your actual keys)
-    $keyId = 'rzp_test_YOUR_KEY_HERE';
+    // Fetch UPI ID and Phone Number from database configuration
+    global $CLINIC_UPI_ID, $CLINIC_PHONE;
     
-    // Normally, here we would call Razorpay Order API to create an order and get an order_id.
-    // For this implementation, we will use the standard checkout flow which creates the order on the fly (or you can use Razorpay's API).
-    // Let's generate a dummy order ID for demonstration.
-    $order_id = "order_" . uniqid();
-    
-    // Update appointment with order ID
-    $stmt = $pdo->prepare("UPDATE appointments SET razorpay_order_id = ? WHERE id = ?");
-    $stmt->execute([$order_id, $appointment_id]);
+    // Generate static-aligned UPI URL for mobile intent-taps (Matches owner of 9848212220@hdfc)
+    $payeeName = "Ramanand Satapathy";
+    $upiString = "upi://pay?pa=" . $CLINIC_UPI_ID . "&pn=" . urlencode($payeeName) . "&am=" . $consultation_fee . "&cu=INR";
 } else {
     header("Location: index.php");
     exit;
 }
+
+$siteTitle = 'Secure Payment - Brain Mind Behaviour';
+$metaDescription = 'Scan QR code to pay consultation fee and upload proof.';
+$bodyClass = 'service-details-page';
+include_once 'includes/header.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Processing Payment - Brain Mind Behaviour</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light d-flex align-items-center justify-content-center" style="height: 100vh;">
-    <div class="card p-5 text-center shadow-sm" style="max-width: 500px;">
-        <h3 class="mb-4">Redirecting to Payment...</h3>
-        <p class="text-muted">Please do not refresh or close this page.</p>
-        <div class="spinner-border text-primary mx-auto mb-4" role="status"></div>
-        
-        <!-- Razorpay Checkout Form -->
-        <form action="payment-success.php" method="POST" id="razorpay-form">
-            <input type="hidden" name="appointment_id" value="<?php echo $appointment_id; ?>">
-            <script
-                src="https://checkout.razorpay.com/v1/checkout.js"
-                data-key="<?php echo $keyId; ?>"
-                data-amount="<?php echo $fee_in_paise; ?>"
-                data-currency="INR"
-                data-order_id=""
-                data-buttontext="Pay with Razorpay"
-                data-name="Brain Mind Behaviour"
-                data-description="Consultation Booking"
-                data-image="assets/img/logo.png"
-                data-prefill.name="<?php echo htmlspecialchars($patient_name); ?>"
-                data-prefill.email="<?php echo htmlspecialchars($patient_email); ?>"
-                data-prefill.contact="<?php echo htmlspecialchars($patient_phone); ?>"
-                data-theme.color="#2E5C9A"
-            ></script>
-            <input type="hidden" custom="Hidden Element" name="hidden">
-        </form>
+
+<main class="main booking-light-theme" style="min-height: 90vh;">
+    <div class="container py-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border border-light text-center">
+                    
+                    <h2 class="fw-bold text-dark mb-3">Secure Payment</h2>
+                    <p class="text-muted mb-4">Complete your booking by paying the consultation fee of <strong>₹1,000</strong> via UPI QR Code.</p>
+                    
+                    <div class="row justify-content-center align-items-center g-4 mb-5">
+                        <!-- Left: QR Code -->
+                        <div class="col-md-5">
+                            <div class="p-3 bg-light rounded-4 border border-light d-inline-block shadow-sm">
+                                <a href="<?php echo $upiString; ?>">
+                                    <img src="assets/img/clinic_qr.jpg" alt="UPI QR Code" class="img-fluid" style="max-width: 220px; border-radius: 8px;">
+                                </a>
+                                <div class="mt-2 text-dark fw-bold small">
+                                    Scan or Tap to Pay ₹1,000
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Right: Scan details -->
+                        <div class="col-md-7 text-start">
+                            <div class="p-3 bg-light rounded-3 border-start border-primary border-4" style="border-left-width: 4px !important;">
+                                <h6 class="fw-bold text-dark mb-3"><i class="fas fa-info-circle text-primary me-2"></i>Payment Instructions:</h6>
+                                <ol class="small text-muted ps-3 mb-0" style="line-height: 1.6;">
+                                    <li class="mb-2">Open GPay, PhonePe, Paytm, or any UPI app on your phone.</li>
+                                    <li class="mb-2">Scan the QR code on the left and complete the payment of <strong>₹1,000</strong>.</li>
+                                    <li class="mb-2">Enter <code><?php echo htmlspecialchars($CLINIC_UPI_ID); ?></code> manually if you are booking on mobile and can't scan.</li>
+                                    <li class="mb-2">Save the payment confirmation screenshot on your device.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Proof Form -->
+                    <div class="border-top pt-4 text-start">
+                        <h4 class="fw-bold text-dark mb-4">Submit Payment Proof</h4>
+                        
+                        <form action="process-payment-proof.php" method="POST" enctype="multipart/form-data">
+                            <input type="hidden" name="appointment_id" value="<?php echo $appointment_id; ?>">
+                            
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-muted">Transaction ID / UTR (12-digit number) *</label>
+                                    <input type="text" class="form-control" name="transaction_id" placeholder="E.g. 312894567210" required pattern="\d{12,}" title="Please enter a valid Transaction UTR (at least 12 digits)">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-muted">Upload Payment Screenshot *</label>
+                                    <input type="file" class="form-control" name="payment_screenshot" accept="image/*" required>
+                                </div>
+                                
+                                <div class="col-12 mt-4">
+                                    <div class="d-grid">
+                                        <button type="submit" class="btn btn-primary rounded-pill py-3 fw-bold" style="background-color: #0d6efd; border-color: #0d6efd; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);">
+                                            <i class="fas fa-check-circle me-2"></i> Submit Payment Details
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Alternative WhatsApp Contact -->
+                    <div class="mt-4 pt-3 border-top text-center">
+                        <p class="text-muted small mb-3">Facing issues? Book directly or share proof via WhatsApp:</p>
+                        <a href="https://wa.me/<?php echo $CLINIC_PHONE; ?>?text=<?php echo urlencode("Hello, I am trying to book an appointment (ID: #".$appointment_id."). Need assistance with payment."); ?>" target="_blank" class="btn btn-success rounded-pill px-4 py-2 fw-bold" style="box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);">
+                            <i class="fab fa-whatsapp me-2"></i> Chat with Clinic on WhatsApp
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <script>
-        // Auto-click the Razorpay button after a brief delay, or auto-submit with a mock payment ID in test mode
-        setTimeout(function() {
-            var btn = document.querySelector('.razorpay-payment-button');
-            if (btn) {
-                btn.click();
-                btn.style.display = 'none';
-            } else {
-                // Razorpay script not loaded or credentials invalid.
-                // Auto-submit with simulated mock payment ID to make booking active.
-                console.log("Razorpay script not initialized. Simulating booking payment success...");
-                var form = document.getElementById('razorpay-form');
-                
-                // Add mock payment ID
-                var payIdInput = document.createElement('input');
-                payIdInput.type = 'hidden';
-                payIdInput.name = 'razorpay_payment_id';
-                payIdInput.value = 'pay_MOCK_' + Math.random().toString(36).substring(2, 10).toUpperCase();
-                form.appendChild(payIdInput);
-                
-                form.submit();
-            }
-        }, 1500);
-    </script>
-</body>
-</html>
+</main>
+
+<?php include_once 'includes/footer.php'; ?>

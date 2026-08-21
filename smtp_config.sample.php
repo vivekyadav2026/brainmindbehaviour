@@ -10,4 +10,8 @@ $SMTP_PORT = 465;
 
 // The email address where you want to receive the alerts
 $CLINIC_EMAIL = 'ranjeetsatapathy12@gmail.com';
+
+// Payment & Contact configuration
+$CLINIC_UPI_ID = 'YOUR_UPI_ID@okaxis';  // Replace with your clinic UPI ID for QR codes
+$CLINIC_PHONE = '919160366716';         // Clinic WhatsApp number (with country code, no +)
 ?>

@@ -14,9 +14,9 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
-  --heading-font: "Outfit", "Inter", sans-serif;
-  --nav-font: "Outfit", "Inter", sans-serif;
+  --default-font: "Plus Jakarta Sans", "Outfit", system-ui, -apple-system, sans-serif;
+  --heading-font: "Plus Jakarta Sans", "Outfit", sans-serif;
+  --nav-font: "Plus Jakarta Sans", "Outfit", sans-serif;
 }
 
 /* Global Colors */
@@ -8803,13 +8803,14 @@ section h1, section h2, section h3, section h4, section h5, section h6,
 /* Dedicated Light Theme for Booking Page (Overrides Dark Theme) */
 .booking-light-theme {
   background-color: #f4f7f9 !important;
+  color: #374151 !important;
   position: relative;
   z-index: 10;
 }
 .booking-light-theme p, .booking-light-theme li, .booking-light-theme .text-muted {
   color: #4b5563 !important;
 }
-.booking-light-theme h1, .booking-light-theme h2, .booking-light-theme h3, .booking-light-theme h4, .booking-light-theme h5, .booking-light-theme h6, .booking-light-theme .text-dark {
+.booking-light-theme h1, .booking-light-theme h2, .booking-light-theme h3, .booking-light-theme h4, .booking-light-theme h5, .booking-light-theme h6, .booking-light-theme .text-dark, .booking-light-theme strong, .booking-light-theme b, .booking-light-theme label {
   color: #111827 !important;
 }
 .booking-light-theme .form-control, .booking-light-theme .form-select {

@@ -1,4 +1,7 @@
 <?php
+require_once 'includes/db.php';
+global $CLINIC_PHONE;
+
 $siteTitle = 'Book Appointment | Brain Mind Behaviour Neurosciences Research Institute';
 $metaDescription = 'Book an onsite clinic visit or an online video consultation securely with our specialists.';
 $bodyClass = 'service-details-page';
@@ -107,12 +110,17 @@ include_once 'includes/header.php';
                         
                         <div class="d-grid mt-2">
                             <button type="submit" class="btn btn-primary btn-lg rounded-pill fw-bold" style="background-color: #0d6efd; border-color: #0d6efd; box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);">
-                                <i class="fas fa-lock me-2"></i> Proceed to Secure Payment
+                                <i class="fas fa-arrow-right me-2"></i> Book Appointment
                             </button>
                         </div>
-                        <p class="text-center text-muted small mt-3 mb-0">
-                            <i class="fas fa-shield-alt text-success me-1"></i> SSL Secured Payment via Razorpay
-                        </p>
+                        <div class="text-center mt-3 mb-2">
+                            <span class="text-muted small">Or prefer booking on chat?</span>
+                        </div>
+                        <div class="d-grid">
+                            <a href="https://wa.me/<?php echo $CLINIC_PHONE; ?>?text=<?php echo urlencode("Hello, I want to book an appointment with Brain Mind Behaviour clinic. Please guide me."); ?>" target="_blank" class="btn btn-success rounded-pill fw-bold" style="box-shadow: 0 4px 12px rgba(40, 167, 69, 0.2); color:#ffffff !important;">
+                                <i class="fab fa-whatsapp me-2"></i> Book directly via WhatsApp
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

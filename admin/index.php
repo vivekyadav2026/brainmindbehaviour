@@ -30,34 +30,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login - Brain Mind Behaviour</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
     <style>
-        body { background-color: #f4f6f9; display: flex; align-items: center; justify-content: center; height: 100vh; }
-        .login-box { width: 100%; max-width: 400px; padding: 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        .btn-primary { background-color: #2E5C9A; border-color: #2E5C9A; }
-        .btn-primary:hover { background-color: #1a3c6b; border-color: #1a3c6b; }
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 20px !important;
+            border: 1px solid rgba(0,0,0,0.05);
+            background: #ffffff;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05) !important;
+        }
     </style>
 </head>
 <body>
-    <div class="login-box">
+    <div class="card login-card p-4 p-md-5">
         <div class="text-center mb-4">
-            <h4>Clinic Admin</h4>
-            <p class="text-muted">Sign in to start your session</p>
+            <h3 class="fw-extrabold text-dark mb-1">Clinic Admin</h3>
+            <p class="text-muted small">Sign in to manage appointments & leads</p>
         </div>
+        
         <?php if ($error): ?>
-            <div class="alert alert-danger"><?php echo htmlspecialchars($error); ?></div>
+            <div class="alert alert-danger py-2 px-3 small border-0"><?php echo htmlspecialchars($error); ?></div>
         <?php endif; ?>
+        
         <form method="post" action="">
             <div class="mb-3">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control" required>
+                <label class="form-label small fw-bold text-muted">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="Enter username" required autocomplete="username">
             </div>
-            <div class="mb-3">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control" required>
+            <div class="mb-4">
+                <label class="form-label small fw-bold text-muted">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Enter password" required autocomplete="current-password">
             </div>
-            <button type="submit" class="btn btn-primary w-100">Login</button>
+            <button type="submit" class="btn btn-primary w-100 py-2.5 rounded-pill fw-bold text-white">
+                Sign In
+            </button>
         </form>
     </div>
 </body>
