@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <div class="card login-card p-4 p-md-5">
         <div class="text-center mb-4">
-            <h3 class="fw-extrabold text-dark mb-1">Clinic Admin</h3>
+            <h3 class="fw-extrabold text-dark mb-1">Brain Mind Behaviour</h3>
             <p class="text-muted small">Sign in to manage appointments & leads</p>
         </div>
         
