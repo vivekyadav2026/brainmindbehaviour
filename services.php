@@ -9,7 +9,7 @@ $services = [
         'title' => 'Psychiatry',
         'desc' => 'Comprehensive evaluation, diagnosis, and medical management of mental health conditions.',
         'icon' => 'fas fa-brain',
-        'img' => 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'img' => 'assets/img/indian_psychiatry.jpg',
         'link' => 'psychiatry.php',
         'features' => ['Diagnosis', 'Medical Management']
     ],
@@ -25,7 +25,7 @@ $services = [
         'title' => 'Depression',
         'desc' => 'Evidence-based treatment plans for Major Depressive Disorder and related conditions.',
         'icon' => 'bi-cloud-sun',
-        'img' => 'https://images.unsplash.com/photo-1493836512294-502baa1986e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'img' => 'assets/img/indian_depression.jpg',
         'link' => 'depression.php',
         'features' => ['Therapy', 'Medication']
     ],
@@ -33,7 +33,7 @@ $services = [
         'title' => 'Anxiety Disorders',
         'desc' => 'Therapeutic and medical interventions for panic attacks, GAD, phobias, and OCD.',
         'icon' => 'bi-wind',
-        'img' => 'https://images.unsplash.com/photo-1528716321680-815a8cdb8c53?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'img' => 'assets/img/indian_depression.jpg',
         'link' => 'anxiety.php',
         'features' => ['Panic Attacks', 'OCD Treatment']
     ],
@@ -49,7 +49,7 @@ $services = [
         'title' => 'Schizophrenia',
         'desc' => 'Comprehensive care including antipsychotic medication management and family counseling.',
         'icon' => 'bi-people',
-        'img' => 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'img' => 'assets/img/indian_counselling.jpg',
         'link' => 'schizophrenia.php',
         'features' => ['Medication Management', 'Family Support']
     ],
@@ -59,7 +59,7 @@ $services = [
         'icon' => 'bi-capsule',
         'img' => 'https://images.unsplash.com/photo-1563213126-a4273aed2016?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         'link' => 'addiction.php',
-        'features' => ['De-addiction Programs', 'Rehabilitation']
+        'features' => ['Gaming and Gambling addictions', 'Detoxification', 'De-addiction treatment programs']
     ],
     [
         'title' => 'Dementia',
@@ -73,7 +73,7 @@ $services = [
         'title' => 'Psychological Counselling',
         'desc' => 'Individual therapy, CBT, and stress management for various life challenges.',
         'icon' => 'bi-chat-heart',
-        'img' => 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'img' => 'assets/img/indian_counselling.jpg',
         'link' => 'counselling.php',
         'features' => ['CBT', 'Stress Management']
     ]

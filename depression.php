@@ -38,7 +38,7 @@ include_once 'includes/header.php';
           <!-- Left Content Column -->
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
             <div class="service-details-content">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="<?php echo htmlspecialchars($serviceName); ?>" class="img-fluid rounded-4 mb-4 shadow-sm" style="width: 100%; object-fit: cover; aspect-ratio: 16/9;">
+              <img src="assets/img/indian_depression.jpg" alt="<?php echo htmlspecialchars($serviceName); ?>" class="img-fluid rounded-4 mb-4 shadow-sm" style="width: 100%; object-fit: cover; aspect-ratio: 16/9;">
 
               <h2 class="mb-4 fw-bold">Understanding Clinical Depression</h2>
               <p class="lead text-muted mb-4">

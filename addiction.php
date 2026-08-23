@@ -1,7 +1,7 @@
 <?php
 $serviceName = 'Addiction & De-addiction';
 $siteTitle = 'Addiction & De-addiction Services | Brain Mind Behaviour Neurosciences Research Institute';
-$metaDescription = 'Outpatient medical detox, rehabilitation support, and de-addiction counseling at Brain Mind Behaviour, Visakhapatnam.';
+$metaDescription = 'Outpatient medical detox, Gaming and Gambling de-addiction treatment, and de-addiction programs at Brain Mind Behaviour, Visakhapatnam.';
 $bodyClass = 'service-details-page';
 include_once 'includes/header.php';
 ?>
@@ -15,7 +15,7 @@ include_once 'includes/header.php';
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1 class="heading-title"><?php echo htmlspecialchars($serviceName); ?></h1>
-              <p class="mb-0">Outpatient medical detoxification, supportive therapy, and rehabilitation.</p>
+              <p class="mb-0">Outpatient medical detoxification, Gaming & Gambling de-addiction, and treatment programs.</p>
             </div>
           </div>
         </div>
@@ -38,12 +38,14 @@ include_once 'includes/header.php';
           <!-- Left Content Column -->
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
             <div class="service-details-content">
+              <img src="assets/img/indian_counselling.jpg" alt="<?php echo htmlspecialchars($serviceName); ?>" class="img-fluid rounded-4 mb-4 shadow-sm" style="width: 100%; object-fit: cover; aspect-ratio: 16/9;">
+
               <h2 class="mb-4 fw-bold">Structured De-addiction & Recovery</h2>
               <p class="lead text-muted mb-4">
-                Compassionate medical and psychological rehabilitation plans designed to support long-term recovery from substance use.
+                Compassionate medical detoxification and psychological treatment programs designed to support long-term recovery.
               </p>
               <p class="mb-4">
-                Addiction is a chronic, relapsing brain disorder characterized by compulsive seeking and use of substances despite harmful consequences. Recovery requires a dual approach: clinical medical detox to manage withdrawal symptoms safely, followed by intensive behavioral therapy to address the root psychological causes of substance dependence.
+                Addiction is a chronic, relapsing brain disorder characterized by compulsive seeking and use of substances or engagement in behaviors despite harmful consequences. Recovery requires a dual approach: clinical medical detoxification to manage withdrawal symptoms safely, followed by structured de-addiction treatment programs to address behavioral and psychological dependence.
               </p>
               
               <h3 class="mt-5 mb-3 fw-semibold">Clinical Services Provided</h3>
@@ -52,8 +54,8 @@ include_once 'includes/header.php';
                   <div class="d-flex align-items-start gap-2">
                     <i class="bi bi-patch-check text-primary fs-5"></i>
                     <div>
-                      <h5 class="mb-1 fw-bold">Alcohol De-addiction</h5>
-                      <p class="text-muted small">Safe medical detoxification protocols, anti-craving medications, and psychological relapse prevention.</p>
+                      <h5 class="mb-1 fw-bold">Detoxification (Detox)</h5>
+                      <p class="text-muted small">Safe, medically supervised detoxification protocols and withdrawal management for substance dependence.</p>
                     </div>
                   </div>
                 </div>
@@ -61,8 +63,8 @@ include_once 'includes/header.php';
                   <div class="d-flex align-items-start gap-2">
                     <i class="bi bi-patch-check text-primary fs-5"></i>
                     <div>
-                      <h5 class="mb-1 fw-bold">Substance Abuse Counselling</h5>
-                      <p class="text-muted small">Counselling and rehabilitation support for prescription medication dependence and other illicit substances.</p>
+                      <h5 class="mb-1 fw-bold">Gaming & Gambling Addictions</h5>
+                      <p class="text-muted small">Specialized cognitive-behavioral therapies (CBT) and counseling targeting screen time, online gaming, and compulsive gambling.</p>
                     </div>
                   </div>
                 </div>
@@ -70,8 +72,8 @@ include_once 'includes/header.php';
                   <div class="d-flex align-items-start gap-2">
                     <i class="bi bi-patch-check text-primary fs-5"></i>
                     <div>
-                      <h5 class="mb-1 fw-bold">Tobacco & Nicotine Cessation</h5>
-                      <p class="text-muted small">Pharmacological aids combined with behavioral therapies to support successful long-term cessation.</p>
+                      <h5 class="mb-1 fw-bold">Alcohol & Substance De-addiction</h5>
+                      <p class="text-muted small">Anti-craving medication management, supportive counseling, and relapse prevention training.</p>
                     </div>
                   </div>
                 </div>
@@ -79,15 +81,15 @@ include_once 'includes/header.php';
                   <div class="d-flex align-items-start gap-2">
                     <i class="bi bi-patch-check text-primary fs-5"></i>
                     <div>
-                      <h5 class="mb-1 fw-bold">Relapse Prevention Training</h5>
-                      <p class="text-muted small">Equipping patients with stress-management and trigger-identification skills to maintain sobriety.</p>
+                      <h5 class="mb-1 fw-bold">De-addiction Treatment Programs</h5>
+                      <p class="text-muted small">Comprehensive behavioral therapies to build long-term coping mechanisms and emotional resilience.</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="bg-light p-4 rounded-3 border-start border-4 border-primary mb-4">
-                <h4 class="fw-bold mb-2">Outpatient Rehabilitation Support</h4>
+                <h4 class="fw-bold mb-2">Outpatient De-addiction Treatment Programs</h4>
                 <p class="mb-0 text-muted">
                   We specialize in structured outpatient programs, allowing patients to undergo medical detoxification and psychotherapy while maintaining their family and professional commitments in absolute confidentiality.
                 </p>

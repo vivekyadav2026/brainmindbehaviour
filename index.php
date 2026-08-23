@@ -167,7 +167,7 @@ include_once 'includes/header.php';
                   </div>
                   <div class="consult-info">
                     <h5>Psychiatric Consultation</h5>
-                    <span>20 minutes</span>
+                    <span>30 minutes</span>
                   </div>
                 </div>
                 <div class="price">₹2,000</div>
@@ -365,18 +365,6 @@ include_once 'includes/header.php';
       <div class="container section-title" data-aos="fade-up">
         <h2>Patient Stories</h2>
         <p>Trusted by Thousands</p>
-        <div class="google-rating mt-4 d-flex align-items-center justify-content-center gap-2 flex-wrap">
-            <a href="https://maps.app.goo.gl/Gx4TujW35ErAxg9C9" target="_blank" class="text-decoration-none">
-              <div class="d-inline-flex align-items-center bg-dark border border-secondary px-4 py-2 rounded-pill shadow banner-review-badge" style="background-color: rgba(0, 8, 28, 0.6) !important; border-color: rgba(0, 217, 255, 0.15) !important;">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 22px; height: 22px; margin-right: 10px;">
-                  <div class="stars text-warning fs-6 me-2" style="letter-spacing: 1px;">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                  </div>
-                  <strong class="text-white me-2" style="font-size: 15px;">5.0/5</strong>
-                  <span class="text-white-50 small" style="font-size: 13.5px;">based on 311 Google Reviews</span>
-              </div>
-            </a>
-        </div>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="row gy-4 justify-content-center">
@@ -385,9 +373,9 @@ include_once 'includes/header.php';
               <div class="stars text-warning mb-3 fs-6">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
               </div>
-              <p class="fst-italic">"Dr. Ramanand's approach is incredible. He listened patiently and provided a clear, effective treatment plan that completely changed my perspective."</p>
-              <h5 class="mt-4 mb-0 fw-bold">- M.K.</h5>
-              <small class="text-gradient-cyan fw-bold">Anxiety Treatment</small>
+              <p class="fst-italic">"I have been taking treatment from Dr Ramanand Satapathy from past 12 years. I felt comfortable and safe with the doctor and over the years he has helped me make significant progress in managing my mental health."</p>
+              <h5 class="mt-4 mb-0 fw-bold">- Long-term Patient</h5>
+              <small class="text-gradient-cyan fw-bold">Psychiatric Care</small>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
@@ -395,9 +383,9 @@ include_once 'includes/header.php';
               <div class="stars text-warning mb-3 fs-6">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
               </div>
-              <p class="fst-italic">"The online consultation was seamless. I felt just as cared for as an in-person visit. Highly recommend their telepsychiatry services."</p>
-              <h5 class="mt-4 mb-0 fw-bold">- S.R.</h5>
-              <small class="text-gradient-cyan fw-bold">Online Consultation</small>
+              <p class="fst-italic">"Friendly and understanding doctor. She takes the time to explain the health issues clearly and understands problems from multiple perspectives. I felt very relaxed and relieved after the counselling sessions."</p>
+              <h5 class="mt-4 mb-0 fw-bold">- Satisfied Patient</h5>
+              <small class="text-gradient-cyan fw-bold">Depression & Counselling</small>
             </div>
           </div>
           <div class="col-lg-4 col-md-6">
@@ -405,11 +393,24 @@ include_once 'includes/header.php';
               <div class="stars text-warning mb-3 fs-6">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
               </div>
-              <p class="fst-italic">"A highly professional and completely discreet clinic. The counseling sessions provided me with the tools I needed to cope with severe stress."</p>
-              <h5 class="mt-4 mb-0 fw-bold">- Anonymous</h5>
-              <small class="text-gradient-cyan fw-bold">Psychological Counselling</small>
+              <p class="fst-italic">"The doctors here are highly professional, polite, and very cooperative. They listen patiently to the patient's concerns and explain everything thoroughly. Excellent environment and very ethical clinical practice."</p>
+              <h5 class="mt-4 mb-0 fw-bold">- Clinic Patient</h5>
+              <small class="text-gradient-cyan fw-bold">Neuropsychiatry & Therapy</small>
             </div>
           </div>
+        </div>
+        
+        <div class="google-rating mt-5 d-flex align-items-center justify-content-center gap-2 flex-wrap">
+            <a href="https://maps.app.goo.gl/Gx4TujW35ErAxg9C9" target="_blank" class="text-decoration-none">
+              <div class="d-inline-flex align-items-center bg-dark border border-secondary px-4 py-2 rounded-pill shadow banner-review-badge flex-nowrap" style="background-color: rgba(0, 8, 28, 0.6) !important; border-color: rgba(0, 217, 255, 0.15) !important;">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google" style="width: 22px; height: 22px; margin-right: 10px; flex-shrink: 0;">
+                  <div class="stars text-warning fs-6 me-2 text-nowrap" style="letter-spacing: 1px; white-space: nowrap; display: inline-block;">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                  </div>
+                  <strong class="text-white me-2 flex-shrink-0" style="font-size: 15px;">5.0/5</strong>
+                  <span class="text-white-50 small text-nowrap" style="font-size: 13.5px; white-space: nowrap;">based on 311 Google Reviews</span>
+              </div>
+            </a>
         </div>
       </div>
     </section><!-- /Testimonials Section -->

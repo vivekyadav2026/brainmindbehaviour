@@ -8454,7 +8454,7 @@ main p:not([class*="text-"]) {
   .glass-card {
     margin-bottom: 15px !important;
   }
-  .glass-card i {
+  .glass-card i:not(.fa-star) {
     display: inline-block !important;
     width: 100% !important;
     text-align: center !important;
