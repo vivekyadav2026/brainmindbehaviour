@@ -5,6 +5,11 @@ $user = 'root';
 $pass = ''; // Default XAMPP password is empty
 $charset = 'utf8mb4';
 
+// Load git-ignored custom database config if it exists
+if (file_exists(__DIR__ . '/db_config.php')) {
+    include __DIR__ . '/db_config.php';
+}
+
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

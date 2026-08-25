@@ -38,6 +38,16 @@
                 <span class="contact-text"><a href="mailto:contact@brainmindbehaviour.com">contact@brainmindbehaviour.com</a></span>
               </div>
             </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-social-links mt-4 d-flex gap-3">
+              <a href="https://www.instagram.com/brainmindbehaviour/" target="_blank" class="social-link-item" title="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://youtube.com/@brainmindbehaviour?si=7NiSYwRuUeBvNEqB" target="_blank" class="social-link-item" title="YouTube">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
           </div>
         </div>
 

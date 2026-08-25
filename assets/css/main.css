@@ -4993,6 +4993,25 @@ section,
 /*--------------------------------------------------------------
 # Testimonials Section
 --------------------------------------------------------------*/
+.testimonials .swiper-pagination {
+  margin-top: 30px;
+  position: relative;
+  text-align: center;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  opacity: 1;
+}
+
+.testimonials .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: linear-gradient(135deg, #00d9ff, #0052ff) !important;
+  width: 24px;
+  border-radius: 4px;
+}
+
 .testimonials .testimonial-item {
   background-color: var(--surface-color);
   border-radius: 12px;
@@ -8941,3 +8960,28 @@ section h1, section h2, section h3, section h4, section h5, section h6,
 .booking-light-theme.main .border-light {
   border-color: #e2e8f0 !important;
 }
+
+/* Footer Social Links Styling */
+.footer-social-links .social-link-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  color: #00d9ff;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social-links .social-link-item:hover {
+  background: linear-gradient(135deg, #00d9ff, #0052ff) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 217, 255, 0.45);
+}
+

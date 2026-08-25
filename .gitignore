@@ -1,2 +1,3 @@
 # Ignore secure credentials configuration file
 smtp_config.php
+includes/db_config.php

@@ -33,6 +33,9 @@ include_once 'includes/header.php';
                 <a href="services.php" class="btn-outline-white">
                   EXPLORE OUR SERVICES <i class="fas fa-arrow-right ms-2"></i>
                 </a>
+                <a href="https://maps.app.goo.gl/Gx4TujW35ErAxg9C9" target="_blank" class="btn-outline-white">
+                  <i class="fab fa-google text-warning me-2"></i>GOOGLE REVIEWS <i class="fas fa-external-link-alt ms-2" style="font-size: 0.85rem;"></i>
+                </a>
               </div>
 
               <!-- Google review badge inside hero section -->
@@ -367,37 +370,128 @@ include_once 'includes/header.php';
         <p>Trusted by Thousands</p>
       </div>
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4 col-md-6">
-            <div class="glass-card p-4 h-100">
-              <div class="stars text-warning mb-3 fs-6">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000,
+                "disableOnInteraction": false
+              },
+              "slidesPerView": 3,
+              "spaceBetween": 30,
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 15
+                },
+                "768": {
+                  "slidesPerView": 2,
+                  "spaceBetween": 20
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 30
+                }
+              }
+            }
+          </script>
+          
+          <div class="swiper-wrapper">
+            <!-- Review 1 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"Dr. Ramananda Satapathy, a renowned Psychiatrist is an expert hand for treatment of patients with depression and psychological problem. I had visited the doctor and within a fortnight I could feel the tremendous improvement. The cordial behaviour of the doctor including his associates has added further confidence in the treatment with latest technology. Good luck Sir. Have wonderful days to come."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- pradeep panda</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
               </div>
-              <p class="fst-italic">"I have been taking treatment from Dr Ramanand Satapathy from past 12 years. I felt comfortable and safe with the doctor and over the years he has helped me make significant progress in managing my mental health."</p>
-              <h5 class="mt-4 mb-0 fw-bold">- Long-term Patient</h5>
-              <small class="text-gradient-cyan fw-bold">Psychiatric Care</small>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"I'm a student pursuing Law and my age is 20. This is the right age that we have to decide to go in a good way or a bad way in life. And these days nobody thinking about mental health. Without proper mental health it's really hard to lead a better life.<br><br>I've faced problem to focus on my studies and I suffered with panic attack , overthinking and some bad thoughts. Then I consulted Supriya mam. In my personal experience that I've never seen a doctor like Supriya mam who takes much intensive care about patients. I'm really satisfied with her treatment and I'm feeling too better now. Sometimes when I forgot to inform my health status to her when I'm undergoing treatment. Then She remembers and call me back and asks me how are you Monish , what's your health status and all. Now I'm able to focus on my studies. I'm really grateful to you Mam."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- Venkata Sai Monish</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
+              </div>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"One of the finest Psychiatric Doctor in Visakhapatnam. Patiently listens to your thoughts. Spends a good amount of time with the patient so that he can diagnose in the best way."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- P V DURGA PRASAD</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
+              </div>
+            </div>
+            
+            <!-- Review 4 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"I am very much thankful to my doctor who is prescribed such type of medicine I am taking this medicines since 2005 I am okay I am doing my official duties I am district fisheries officer I have perform my government duties in 36 years I have been taking this medicine regularly I am feeling very much happy relax and I am having all types of positive thoughts even after retirement again."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- Victoria Khan</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
+              </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"I recently took my mother to consult Dr. Supriya, a psychiatrist, and I was deeply impressed by her expertise and compassion. During the very first consultation, Dr. Supriya was able to accurately diagnose my mother's condition and immediately suggested the right medication and treatment plan. Thanks to her timely intervention and precise guidance, my mother recovered remarkably well in a very short period of time.<br><br>What truly sets Dr. Supriya apart is her dedication to her patients. She regularly followed up on my mother's progress through messages and phone calls, which gave us immense reassurance and confidence throughout the recovery process.<br><br>We are incredibly grateful for her support, and I highly recommend Dr. Supriya to anyone seeking professional mental health care. Her approach is both thoughtful and effective, and she genuinely cares about the well-being of her patients."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- Bharath Balla</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
+              </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"I am suffering from depression, anxiety and chronic skin condition which makes my life hell. I was suffering and miserable. I come from family who is not open minded about mental health. I decided I need to take care of myself so took my first step to improve my mental health. I thank God for finding doctor Supriya, when I first meet her she took time to understand me and explain my core problem. She listened to me patiently, and also did a follow up almost every other week. I cannot thank her enough for her help. Now my chronic condition is getting better, I don't have any more anxiety attacks anymore."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- Meenakshi srinivasan</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
+              </div>
+            </div>
+
+            <!-- Review 7 -->
+            <div class="swiper-slide">
+              <div class="glass-card p-4 h-100">
+                <div class="stars text-warning mb-3 fs-6">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="fst-italic review-text">"I had a great experience with the Brain Mind Behaviour Neurosciences Research Institute. The doctor is incredibly experienced, and after just one or two sessions, they accurately identified our illnesses. The treatment involved only one tablet, which was both effective and well-explained in terms of potential side effects. Within a month, we saw significant improvements. Plus, they were always available to answer our calls. While the cost is high, the quality of care and results make it worth every penny."</p>
+                <h5 class="mt-4 mb-0 fw-bold">- Gayatri Devi</h5>
+                <small class="text-gradient-cyan fw-bold">Google Review</small>
+              </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="glass-card p-4 h-100">
-              <div class="stars text-warning mb-3 fs-6">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-              <p class="fst-italic">"Friendly and understanding doctor. She takes the time to explain the health issues clearly and understands problems from multiple perspectives. I felt very relaxed and relieved after the counselling sessions."</p>
-              <h5 class="mt-4 mb-0 fw-bold">- Satisfied Patient</h5>
-              <small class="text-gradient-cyan fw-bold">Depression & Counselling</small>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="glass-card p-4 h-100">
-              <div class="stars text-warning mb-3 fs-6">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-              <p class="fst-italic">"The doctors here are highly professional, polite, and very cooperative. They listen patiently to the patient's concerns and explain everything thoroughly. Excellent environment and very ethical clinical practice."</p>
-              <h5 class="mt-4 mb-0 fw-bold">- Clinic Patient</h5>
-              <small class="text-gradient-cyan fw-bold">Neuropsychiatry & Therapy</small>
-            </div>
-          </div>
+          
+          <!-- Swiper Pagination -->
+          <div class="swiper-pagination mt-4"></div>
         </div>
         
         <div class="google-rating mt-5 d-flex align-items-center justify-content-center gap-2 flex-wrap">

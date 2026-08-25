@@ -117,6 +117,63 @@
   new PureCounter();
 
   /**
+   * Testimonials Read More/Less Toggle
+   */
+  function initReadMoreTestimonials() {
+    const maxLength = 180;
+    document.querySelectorAll(".review-text").forEach(p => {
+      let fullHtml = p.innerHTML.trim();
+      
+      // Get raw text to count length
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = fullHtml;
+      const textLength = tempDiv.textContent.trim().length;
+
+      if (textLength > maxLength) {
+        // Remove surrounding quotes if they exist in fullHtml to avoid double quoting
+        let cleanHtml = fullHtml;
+        if (cleanHtml.startsWith('"') && cleanHtml.endsWith('"')) {
+          cleanHtml = cleanHtml.substring(1, cleanHtml.length - 1);
+        } else if (cleanHtml.startsWith('“') && cleanHtml.endsWith('”')) {
+          cleanHtml = cleanHtml.substring(1, cleanHtml.length - 1);
+        }
+        
+        // Truncate based on text content, then build truncated HTML safely
+        const truncatedText = tempDiv.textContent.substring(0, maxLength) + "...";
+        
+        p.setAttribute("data-full-html", cleanHtml);
+        p.setAttribute("data-truncated-html", truncatedText);
+        
+        // Initial state set to truncated
+        p.innerHTML = `"${truncatedText}" <a href="javascript:void(0);" class="read-more-btn ms-1 text-gradient-cyan fw-bold" style="font-size: 0.85rem; text-decoration: none; display: inline-block;">Read More</a>`;
+      }
+    });
+
+    document.addEventListener("click", function(e) {
+      if (e.target && e.target.classList.contains("read-more-btn")) {
+        e.preventDefault();
+        const btn = e.target;
+        const p = btn.closest(".review-text");
+        if (!p) return;
+        
+        const isTruncated = btn.textContent === "Read More";
+        
+        if (isTruncated) {
+          p.innerHTML = `"${p.getAttribute("data-full-html")}" <a href="javascript:void(0);" class="read-more-btn ms-1 text-gradient-cyan fw-bold" style="font-size: 0.85rem; text-decoration: none; display: inline-block;">Read Less</a>`;
+        } else {
+          p.innerHTML = `"${p.getAttribute("data-truncated-html")}" <a href="javascript:void(0);" class="read-more-btn ms-1 text-gradient-cyan fw-bold" style="font-size: 0.85rem; text-decoration: none; display: inline-block;">Read More</a>`;
+        }
+        
+        // Trigger Swiper update so layout height dynamically recalculates
+        const swiperContainer = p.closest('.swiper');
+        if (swiperContainer && swiperContainer.swiper) {
+          swiperContainer.swiper.update();
+        }
+      }
+    });
+  }
+
+  /**
    * Init swiper sliders
    */
   function initSwiper() {
@@ -133,7 +190,10 @@
     });
   }
 
-  window.addEventListener("load", initSwiper);
+  window.addEventListener("load", () => {
+    initReadMoreTestimonials();
+    initSwiper();
+  });
 
   /**
    * Frequently Asked Questions Toggle
