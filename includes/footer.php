@@ -176,7 +176,7 @@
             <!-- 4. Contact No. -->
             <div class="mb-2">
               <label class="appointment-field-label">Contact No.</label>
-              <input type="tel" name="phone" class="form-control appointment-modal-input" placeholder="Your Number" required pattern="[0-9+\s\-]{8,15}">
+              <input type="tel" name="phone" class="form-control appointment-modal-input" placeholder="Your Number" required>
             </div>
 
             <!-- 5. Consult a Psychiatrist or Psychologist -->
@@ -366,7 +366,7 @@
             }, 2000);
         }
 
-        // Handle Appointment Form Submission via AJAX
+        // Handle Appointment Form Submission via AJAX & WhatsApp Fallback
         var form = document.getElementById('appointmentForm');
         if (form) {
             form.addEventListener('submit', function(e) {
@@ -376,11 +376,24 @@
                 var alertBox = document.getElementById('appointmentAlert');
                 
                 var formData = new FormData(form);
-                
+                var nameVal = formData.get('name') || '';
+                var phoneVal = formData.get('phone') || '';
+                var typeVal = formData.get('consultation_type') || '';
+                var locVal = formData.get('location') || '';
+                var specVal = formData.get('specialist') || '';
+
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>SUBMITTING...';
                 alertBox.classList.add('d-none');
                 
+                var waText = "Hello, I would like to book an appointment.\n\n" +
+                             "*Name:* " + nameVal + "\n" +
+                             "*Phone:* " + phoneVal + "\n" +
+                             "*Consultation Type:* " + typeVal + "\n" +
+                             "*Location:* " + locVal + "\n" +
+                             "*Specialist:* " + specVal;
+                var whatsappUrl = "https://api.whatsapp.com/send?phone=919160366716&text=" + encodeURIComponent(waText);
+
                 fetch('process-lead.php', {
                     method: 'POST',
                     body: formData
@@ -396,12 +409,14 @@
                         alertBox.classList.remove('d-none');
                         form.reset();
                         
+                        // Open WhatsApp in new tab for direct chat
                         setTimeout(function() {
+                            window.open(whatsappUrl, '_blank');
                             var modalInstance = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
                             if (modalInstance) {
                                 modalInstance.hide();
                             }
-                        }, 2500);
+                        }, 1200);
                     } else {
                         alertBox.className = 'alert alert-danger mb-3 small';
                         alertBox.innerHTML = '<i class="fas fa-exclamation-triangle me-1"></i> ' + (data.message || 'An error occurred.');
@@ -409,11 +424,21 @@
                     }
                 })
                 .catch(function(err) {
+                    // Fallback to direct WhatsApp booking if fetch fails
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = 'SUBMIT';
-                    alertBox.className = 'alert alert-danger mb-3 small';
-                    alertBox.innerHTML = '<i class="fas fa-exclamation-triangle me-1"></i> Unable to submit request. Please try again.';
+                    alertBox.className = 'alert alert-success mb-3 small';
+                    alertBox.innerHTML = '<i class="fas fa-check-circle me-1"></i> Opening WhatsApp to complete your booking...';
                     alertBox.classList.remove('d-none');
+                    form.reset();
+                    
+                    setTimeout(function() {
+                        window.open(whatsappUrl, '_blank');
+                        var modalInstance = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
+                        if (modalInstance) {
+                            modalInstance.hide();
+                        }
+                    }, 1000);
                 });
             });
         }
