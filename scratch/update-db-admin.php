@@ -41,10 +41,23 @@ try {
         name VARCHAR(100) NOT NULL,
         phone VARCHAR(20) NOT NULL,
         email VARCHAR(100) NULL,
+        consultation_type VARCHAR(100) NULL,
+        location VARCHAR(100) NULL,
+        specialist VARCHAR(100) NULL,
         message TEXT NULL,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )");
-    echo "Table 'popup_leads' verified/created.\n";
+    
+    // Add columns if table already exists without them
+    $columns = ['consultation_type', 'location', 'specialist'];
+    foreach ($columns as $col) {
+        try {
+            $pdo->exec("ALTER TABLE popup_leads ADD COLUMN $col VARCHAR(100) NULL");
+        } catch (PDOException $e) {
+            // Column may already exist
+        }
+    }
+    echo "Table 'popup_leads' verified/updated.\n";
 
 } catch (PDOException $e) {
     echo "Migration failed: " . $e->getMessage() . "\n";

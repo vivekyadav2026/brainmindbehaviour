@@ -128,8 +128,21 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                                         <?php endif; ?>
                                     </td>
                                     <td>
-                                        <div class="small text-muted text-wrap" style="max-width: 300px;">
-                                            <?php echo !empty($lead['message']) ? htmlspecialchars($lead['message']) : '<i>No query submitted (Request Callback)</i>'; ?>
+                                        <div class="small text-dark text-wrap" style="max-width: 320px;">
+                                            <?php if (!empty($lead['consultation_type'])): ?>
+                                                <div><strong>Type:</strong> <?php echo htmlspecialchars($lead['consultation_type']); ?></div>
+                                            <?php endif; ?>
+                                            <?php if (!empty($lead['location'])): ?>
+                                                <div><strong>Location:</strong> <?php echo htmlspecialchars($lead['location']); ?></div>
+                                            <?php endif; ?>
+                                            <?php if (!empty($lead['specialist'])): ?>
+                                                <div><strong>Specialist:</strong> <?php echo htmlspecialchars($lead['specialist']); ?></div>
+                                            <?php endif; ?>
+                                            <?php if (!empty($lead['message'])): ?>
+                                                <div class="text-muted mt-1"><?php echo htmlspecialchars($lead['message']); ?></div>
+                                            <?php elseif (empty($lead['consultation_type']) && empty($lead['specialist'])): ?>
+                                                <span class="text-muted"><i>No extra details submitted</i></span>
+                                            <?php endif; ?>
                                         </div>
                                     </td>
                                     <td>

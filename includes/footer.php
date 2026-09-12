@@ -126,31 +126,84 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js?v=<?php echo filemtime(dirname(__DIR__) . '/assets/js/main.js'); ?>"></script>
-  <!-- Lead Capture Popup Modal -->
-  <div class="modal fade" id="leadModal" tabindex="-1" aria-labelledby="leadModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content booking-light-theme" style="border: none; border-radius: 15px; box-shadow: 0 15px 35px rgba(0,0,0,0.2);">
-        <div class="modal-header border-0 pb-0">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body px-4 px-sm-5 pb-5 pt-0">
-          <div class="text-center mb-4">
-            <h4 class="fw-bold text-dark mb-2" id="leadModalLabel">Book Your Appointment</h4>
-            <p class="text-muted small mb-0">Fill your details to book an appointment via WhatsApp.</p>
+  <!-- Custom Book an Appointment Popup Modal -->
+  <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 400px;">
+      <div class="modal-content appointment-modal-card position-relative border-0" style="border-radius: 20px; background: #ffffff; box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); padding: 16px 18px 20px 18px;">
+        
+        <!-- Custom Circular Close Button -->
+        <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+          <i class="fas fa-times"></i>
+        </button>
+
+        <div class="modal-body p-1 p-sm-2">
+          <div class="text-center mb-3">
+            <h5 class="appointment-modal-title fw-bold mb-0" id="appointmentModalLabel">
+              BOOK AN APPOINTMENT
+            </h5>
           </div>
-          <form id="leadCaptureForm">
+
+          <!-- Alert Container for AJAX Responses -->
+          <div id="appointmentAlert" class="alert d-none mb-2 py-2 px-3 small" role="alert"></div>
+
+          <form id="appointmentForm">
+            <!-- 1. Consultation Type -->
+            <div class="mb-2">
+              <label class="appointment-field-label">Consultation Type</label>
+              <select name="consultation_type" class="form-select appointment-modal-input" required>
+                <option value="" disabled selected>Select Consultation</option>
+                <option value="Online Consultation">Online Consultation</option>
+                <option value="Onsite Consultation">Onsite Consultation</option>
+              </select>
+            </div>
+
+            <!-- 2. Name -->
+            <div class="mb-2">
+              <label class="appointment-field-label">Name</label>
+              <input type="text" name="name" class="form-control appointment-modal-input" placeholder="Your Name" required>
+            </div>
+
+            <!-- 3. Preferred Location -->
+            <div class="mb-2">
+              <label class="appointment-field-label">Preferred Location</label>
+              <select name="location" class="form-select appointment-modal-input" required>
+                <option value="" disabled selected>Select Location</option>
+                <option value="Visakhapatnam (Maharani Peta)">Visakhapatnam (Maharani Peta)</option>
+                <option value="Online (Video Call)">Online (Video Call)</option>
+              </select>
+            </div>
+
+            <!-- 4. Contact No. -->
+            <div class="mb-2">
+              <label class="appointment-field-label">Contact No.</label>
+              <input type="tel" name="phone" class="form-control appointment-modal-input" placeholder="Your Number" required pattern="[0-9+\s\-]{8,15}">
+            </div>
+
+            <!-- 5. Consult a Psychiatrist or Psychologist -->
             <div class="mb-3">
-              <input type="text" class="form-control" name="name" id="waName" placeholder="Your Name *" required>
+              <label class="appointment-field-label">Consult a Psychiatrist or Psychologist</label>
+              <select name="specialist" class="form-select appointment-modal-input" required>
+                <option value="" disabled selected>Select</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Psychologist">Psychologist</option>
+                <option value="Dr. Ramanand Satapathy (Psychiatrist)">Dr. Ramanand Satapathy (Psychiatrist)</option>
+                <option value="Dr. Suprriya Satapathy (Psychiatrist)">Dr. Suprriya Satapathy (Psychiatrist)</option>
+                <option value="Mr. Dev Satapathy (Psychologist)">Mr. Dev Satapathy (Psychologist)</option>
+              </select>
             </div>
-            <div class="mb-3">
-              <input type="tel" class="form-control" name="phone" id="waPhone" placeholder="Phone Number *" required>
+
+            <!-- 6. Privacy Policy Checkbox -->
+            <div class="form-check d-flex align-items-center justify-content-center gap-2 mb-3">
+              <input class="form-check-input mt-0" type="checkbox" id="appointmentPrivacyCheck" required style="width: 16px; height: 16px; cursor: pointer;" checked>
+              <label class="form-check-label" for="appointmentPrivacyCheck" style="color: #334155; font-size: 13px;">
+                I agree to the <a href="privacy-policy.php" target="_blank" style="color: #353e8d; text-decoration: underline; font-weight: 600;">Privacy Policy</a>
+              </label>
             </div>
-            <div class="mb-4">
-              <textarea class="form-control" name="message" id="waMessage" rows="2" placeholder="Briefly describe your query (Optional)"></textarea>
-            </div>
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary rounded-pill py-2 fw-bold" id="leadSubmitBtn" style="background-color: #25d366; border-color: #25d366; color: #fff; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">
-                <i class="fab fa-whatsapp me-2"></i>Book on WhatsApp
+
+            <!-- 7. Submit Button -->
+            <div class="text-center">
+              <button type="submit" class="btn btn-appointment-submit" id="appointmentSubmitBtn">
+                SUBMIT
               </button>
             </div>
           </form>
@@ -159,47 +212,211 @@
     </div>
   </div>
 
-  <!-- Popup Script -->
+  <!-- Custom Compact Styles for Appointment Modal -->
+  <style>
+    .btn-close-custom {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #64748b;
+      background: #ffffff;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s ease;
+      padding: 0;
+    }
+    .btn-close-custom:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+      border-color: #334155;
+    }
+    .appointment-modal-title {
+      color: #2b347b;
+      font-weight: 800;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .appointment-field-label {
+      color: #2b347b;
+      font-weight: 700;
+      font-size: 13.5px;
+      margin-bottom: 3px;
+      display: block;
+    }
+    .appointment-modal-input {
+      border: 1.5px solid #cbd5e1 !important;
+      border-radius: 10px !important;
+      height: 40px !important;
+      padding: 6px 12px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: #0f172a !important;
+      background-color: #ffffff !important;
+      box-shadow: none !important;
+    }
+    .appointment-modal-input:focus {
+      border-color: #2b347b !important;
+      box-shadow: 0 0 0 3px rgba(43, 52, 123, 0.15) !important;
+      color: #0f172a !important;
+      background-color: #ffffff !important;
+    }
+    .appointment-modal-input::placeholder {
+      color: #64748b !important;
+      opacity: 1 !important;
+      font-weight: 400 !important;
+    }
+    /* Explicit Option Styles for Dark Visible Text in Select Dropdowns */
+    .appointment-modal-input option {
+      color: #0f172a !important;
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      font-weight: 500 !important;
+      padding: 8px 12px !important;
+    }
+    .appointment-modal-input option:hover,
+    .appointment-modal-input option:focus,
+    .appointment-modal-input option:active,
+    .appointment-modal-input option:checked {
+      background: #cbd5e1 !important;
+      background-color: #cbd5e1 !important;
+      color: #000000 !important;
+      font-weight: 700 !important;
+    }
+    .btn-appointment-submit {
+      background-color: #2b347b !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+      font-size: 14px !important;
+      letter-spacing: 1px !important;
+      padding: 9px 38px !important;
+      border-radius: 25px !important;
+      border: none !important;
+      box-shadow: 0 4px 15px rgba(43, 52, 123, 0.35) !important;
+      transition: all 0.3s ease !important;
+      width: auto !important;
+      min-width: 150px !important;
+    }
+    .btn-appointment-submit:hover {
+      background-color: #1e265c !important;
+      color: #ffffff !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 6px 20px rgba(43, 52, 123, 0.45) !important;
+    }
+
+    /* Mobile View Modal Container Centering Styles */
+    @media (max-width: 576px) {
+      .modal-dialog {
+        display: flex !important;
+        align-items: center !important;
+        min-height: calc(100vh - 1rem) !important;
+        margin: 0.5rem auto !important;
+        max-width: 92% !important;
+      }
+      .appointment-modal-card {
+        width: 100% !important;
+        padding: 18px 16px !important;
+        margin: 0 auto !important;
+      }
+      .appointment-modal-title {
+        text-align: center !important;
+        font-size: 17px !important;
+      }
+      .appointment-field-label {
+        text-align: left !important;
+        width: 100% !important;
+      }
+      .appointment-modal-input {
+        text-align: left !important;
+        text-align-last: left !important;
+      }
+      .appointment-modal-input::placeholder {
+        text-align: left !important;
+      }
+      .appointment-modal-input option {
+        text-align: left !important;
+      }
+      .form-check {
+        justify-content: center !important;
+      }
+    }
+  </style>
+
+  <!-- Appointment Modal Script -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Show popup after 1.5 seconds if not already shown in this session
-        if (!sessionStorage.getItem('lead_popup_shown')) {
-            console.log("Triggering lead popup in 1.5 seconds...");
+        // Auto show modal popup after 2 seconds if not already shown in session
+        if (!sessionStorage.getItem('appointment_popup_shown')) {
             setTimeout(function() {
-                var modalElement = document.getElementById('leadModal');
+                var modalElement = document.getElementById('appointmentModal');
                 if (modalElement) {
-                    var myModal = new bootstrap.Modal(modalElement, {
-                        keyboard: false
-                    });
+                    var myModal = new bootstrap.Modal(modalElement);
                     myModal.show();
-                    sessionStorage.setItem('lead_popup_shown', 'true');
+                    sessionStorage.setItem('appointment_popup_shown', 'true');
                 }
-            }, 1500);
-        } else {
-            console.log("Lead popup already shown in this session.");
+            }, 2000);
         }
 
-        // Handle form submission via WhatsApp
-        document.getElementById('leadCaptureForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var name = document.getElementById('waName').value.trim();
-            var phone = document.getElementById('waPhone').value.trim();
-            var message = document.getElementById('waMessage').value.trim();
-            
-            var text = "Hello, I would like to book an appointment.\n\n*Name:* " + name + "\n*Phone:* " + phone;
-            if (message !== "") {
-                text += "\n*Query:* " + message;
-            }
-            
-            var whatsappUrl = "https://api.whatsapp.com/send?phone=919160366716&text=" + encodeURIComponent(text);
-            window.open(whatsappUrl, '_blank');
-            
-            // Hide modal
-            var modalInstance = bootstrap.Modal.getInstance(document.getElementById('leadModal'));
-            if (modalInstance) {
-                modalInstance.hide();
-            }
-        });
+        // Handle Appointment Form Submission via AJAX
+        var form = document.getElementById('appointmentForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                var submitBtn = document.getElementById('appointmentSubmitBtn');
+                var alertBox = document.getElementById('appointmentAlert');
+                
+                var formData = new FormData(form);
+                
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>SUBMITTING...';
+                alertBox.classList.add('d-none');
+                
+                fetch('process-lead.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(res) { return res.json(); })
+                .then(function(data) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'SUBMIT';
+                    
+                    if (data.status === 'success') {
+                        alertBox.className = 'alert alert-success mb-3 small';
+                        alertBox.innerHTML = '<i class="fas fa-check-circle me-1"></i> ' + data.message;
+                        alertBox.classList.remove('d-none');
+                        form.reset();
+                        
+                        setTimeout(function() {
+                            var modalInstance = bootstrap.Modal.getInstance(document.getElementById('appointmentModal'));
+                            if (modalInstance) {
+                                modalInstance.hide();
+                            }
+                        }, 2500);
+                    } else {
+                        alertBox.className = 'alert alert-danger mb-3 small';
+                        alertBox.innerHTML = '<i class="fas fa-exclamation-triangle me-1"></i> ' + (data.message || 'An error occurred.');
+                        alertBox.classList.remove('d-none');
+                    }
+                })
+                .catch(function(err) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'SUBMIT';
+                    alertBox.className = 'alert alert-danger mb-3 small';
+                    alertBox.innerHTML = '<i class="fas fa-exclamation-triangle me-1"></i> Unable to submit request. Please try again.';
+                    alertBox.classList.remove('d-none');
+                });
+            });
+        }
     });
   </script>
 </body>

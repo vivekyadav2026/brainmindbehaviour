@@ -9,6 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars(trim($_POST['name'] ?? ''));
     $phone = htmlspecialchars(trim($_POST['phone'] ?? ''));
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_SANITIZE_EMAIL);
+    $consultation_type = htmlspecialchars(trim($_POST['consultation_type'] ?? ''));
+    $location = htmlspecialchars(trim($_POST['location'] ?? ''));
+    $specialist = htmlspecialchars(trim($_POST['specialist'] ?? ''));
     $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
     if (empty($name) || empty($phone)) {
@@ -18,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         // Save to Database first
-        $stmt = $pdo->prepare("INSERT INTO popup_leads (name, phone, email, message) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$name, $phone, $email, $message]);
+        $stmt = $pdo->prepare("INSERT INTO popup_leads (name, phone, email, consultation_type, location, specialist, message) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$name, $phone, $email, $consultation_type, $location, $specialist, $message]);
 
         $mail = getMailer();
         global $CLINIC_EMAIL;
@@ -33,11 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Content
         $mail->isHTML(true);
-        $mail->Subject = "New Website Lead: $name";
+        $mail->Subject = "New Appointment Inquiry: $name";
         
-        $emailBody = "<h3>New Website Lead Received</h3>";
+        $emailBody = "<h3>New Appointment Lead Received</h3>";
         $emailBody .= "<p><strong>Name:</strong> {$name}</p>";
         $emailBody .= "<p><strong>Phone:</strong> {$phone}</p>";
+        if (!empty($consultation_type)) {
+            $emailBody .= "<p><strong>Consultation Type:</strong> {$consultation_type}</p>";
+        }
+        if (!empty($location)) {
+            $emailBody .= "<p><strong>Preferred Location:</strong> {$location}</p>";
+        }
+        if (!empty($specialist)) {
+            $emailBody .= "<p><strong>Consult Specialist:</strong> {$specialist}</p>";
+        }
         if (!empty($email)) {
             $emailBody .= "<p><strong>Email:</strong> {$email}</p>";
         }

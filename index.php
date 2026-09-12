@@ -27,7 +27,7 @@ include_once 'includes/header.php';
               </p>
 
               <div class="hero-actions d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3 mb-4" data-aos="fade-right" data-aos-delay="500">
-                <a href="book-appointment.php" class="btn-glow-blue">
+                <a href="#appointmentModal" data-bs-toggle="modal" data-bs-target="#appointmentModal" class="btn-glow-blue">
                   <i class="far fa-calendar-check me-2"></i>BOOK AN APPOINTMENT
                 </a>
                 <a href="services.php" class="btn-outline-white">
@@ -191,7 +191,7 @@ include_once 'includes/header.php';
               </div>
 
               <div class="mt-4">
-                <a href="onsite-consultation.php" class="btn-book-now text-decoration-none">
+                <a href="#appointmentModal" data-bs-toggle="modal" data-bs-target="#appointmentModal" class="btn-book-now text-decoration-none">
                   <i class="far fa-calendar-check me-2"></i>BOOK APPOINTMENT NOW
                 </a>
               </div>
