@@ -135,26 +135,22 @@
         </div>
         <div class="modal-body px-4 px-sm-5 pb-5 pt-0">
           <div class="text-center mb-4">
-            <h4 class="fw-bold text-dark mb-2" id="leadModalLabel">How can we help you?</h4>
-            <p class="text-muted small mb-0">Leave your details and our team will get back to you shortly.</p>
+            <h4 class="fw-bold text-dark mb-2" id="leadModalLabel">Book Your Appointment</h4>
+            <p class="text-muted small mb-0">Fill your details to book an appointment via WhatsApp.</p>
           </div>
           <form id="leadCaptureForm">
-            <div id="leadFormAlert" class="alert d-none small"></div>
             <div class="mb-3">
-              <input type="text" class="form-control" name="name" placeholder="Your Name *" required>
+              <input type="text" class="form-control" name="name" id="waName" placeholder="Your Name *" required>
             </div>
             <div class="mb-3">
-              <input type="tel" class="form-control" name="phone" placeholder="Phone Number *" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" name="email" placeholder="Email Address (Optional)">
+              <input type="tel" class="form-control" name="phone" id="waPhone" placeholder="Phone Number *" required>
             </div>
             <div class="mb-4">
-              <textarea class="form-control" name="message" rows="2" placeholder="Briefly describe your query (Optional)"></textarea>
+              <textarea class="form-control" name="message" id="waMessage" rows="2" placeholder="Briefly describe your query (Optional)"></textarea>
             </div>
             <div class="d-grid">
-              <button type="submit" class="btn btn-primary rounded-pill py-2 fw-bold" id="leadSubmitBtn" style="background-color: #00d9ff; border-color: #00d9ff; color: #fff; box-shadow: 0 4px 15px rgba(0, 217, 255, 0.4);">
-                Request Callback
+              <button type="submit" class="btn btn-primary rounded-pill py-2 fw-bold" id="leadSubmitBtn" style="background-color: #25d366; border-color: #25d366; color: #fff; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);">
+                <i class="fab fa-whatsapp me-2"></i>Book on WhatsApp
               </button>
             </div>
           </form>
@@ -183,50 +179,26 @@
             console.log("Lead popup already shown in this session.");
         }
 
-        // Handle form submission via AJAX
+        // Handle form submission via WhatsApp
         document.getElementById('leadCaptureForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            var form = this;
-            var submitBtn = document.getElementById('leadSubmitBtn');
-            var alertBox = document.getElementById('leadFormAlert');
+            var name = document.getElementById('waName').value.trim();
+            var phone = document.getElementById('waPhone').value.trim();
+            var message = document.getElementById('waMessage').value.trim();
             
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
-            alertBox.classList.add('d-none');
-            alertBox.classList.remove('alert-success', 'alert-danger');
-
-            var formData = new FormData(form);
-
-            fetch('process-lead.php', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                alertBox.classList.remove('d-none');
-                if (data.status === 'success') {
-                    alertBox.classList.add('alert-success');
-                    alertBox.innerHTML = data.message;
-                    form.reset();
-                    // Hide modal after 3 seconds on success
-                    setTimeout(function() {
-                        var modalInstance = bootstrap.Modal.getInstance(document.getElementById('leadModal'));
-                        modalInstance.hide();
-                    }, 3000);
-                } else {
-                    alertBox.classList.add('alert-danger');
-                    alertBox.innerHTML = data.message;
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'Request Callback';
-                }
-            })
-            .catch(error => {
-                alertBox.classList.remove('d-none');
-                alertBox.classList.add('alert-danger');
-                alertBox.innerHTML = 'Network error. Please try again.';
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Request Callback';
-            });
+            var text = "Hello, I would like to book an appointment.\n\n*Name:* " + name + "\n*Phone:* " + phone;
+            if (message !== "") {
+                text += "\n*Query:* " + message;
+            }
+            
+            var whatsappUrl = "https://api.whatsapp.com/send?phone=919160366716&text=" + encodeURIComponent(text);
+            window.open(whatsappUrl, '_blank');
+            
+            // Hide modal
+            var modalInstance = bootstrap.Modal.getInstance(document.getElementById('leadModal'));
+            if (modalInstance) {
+                modalInstance.hide();
+            }
         });
     });
   </script>
