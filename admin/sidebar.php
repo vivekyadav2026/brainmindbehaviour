@@ -23,19 +23,19 @@ $currentAdminPage = basename($_SERVER['PHP_SELF']);
     </div>
     
     <div class="list-group list-group-flush w-100 flex-grow-1 py-3 px-2">
-        <a href="dashboard.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'dashboard.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+        <a href="dashboard.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'dashboard.php' ? 'active-link' : ''; ?>">
             <i class="fas fa-tachometer-alt me-3 fs-5"></i> Dashboard
         </a>
-        <a href="appointments.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'appointments.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+        <a href="appointments.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'appointments.php' ? 'active-link' : ''; ?>">
             <i class="fas fa-calendar-check me-3 fs-5"></i> Appointments
         </a>
-        <a href="leads.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'leads.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+        <a href="leads.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'leads.php' ? 'active-link' : ''; ?>">
             <i class="fas fa-bullhorn me-3 fs-5"></i> Popup Leads
         </a>
-        <a href="inquiries.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'inquiries.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+        <a href="inquiries.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'inquiries.php' ? 'active-link' : ''; ?>">
             <i class="fas fa-envelope-open-text me-3 fs-5"></i> Contact Log
         </a>
-        <a href="settings.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'settings.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
+        <a href="settings.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'settings.php' ? 'active-link' : ''; ?>">
             <i class="fas fa-sliders-h me-3 fs-5"></i> Settings
         </a>
         <a href="logout.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mt-4 d-flex align-items-center">
