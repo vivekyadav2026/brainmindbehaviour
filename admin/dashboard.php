@@ -142,7 +142,7 @@ $recent_appointments = $recent_stmt->fetchAll();
                 <div class="card border-0 shadow-sm rounded-3 p-4 bg-white">
                     <h5 class="fw-bold text-dark mb-4"><i class="fas fa-history text-muted me-2"></i>Recent Booking Activities</h5>
                     
-                    <div class="table-responsive">
+                    <div class="table-responsive table-responsive-stack">
                         <table class="table table-hover align-middle mb-0">
                             <thead class="table-light">
                                 <tr>
@@ -157,20 +157,20 @@ $recent_appointments = $recent_stmt->fetchAll();
                                 <?php if (count($recent_appointments) > 0): ?>
                                     <?php foreach ($recent_appointments as $app): ?>
                                     <tr>
-                                        <td>
+                                        <td data-label="Patient">
                                             <div class="fw-bold text-dark"><?php echo htmlspecialchars($app['patient_name']); ?></div>
                                             <small class="text-muted"><?php echo htmlspecialchars($app['patient_phone']); ?></small>
                                         </td>
-                                        <td>
+                                        <td data-label="Consultation">
                                             <span class="badge bg-info-subtle text-info fw-semibold px-2 py-1">
                                                 <?php echo ucfirst($app['appointment_type']); ?>
                                             </span>
                                         </td>
-                                        <td>
+                                        <td data-label="Schedule">
                                             <div class="small fw-semibold"><?php echo $app['appointment_date']; ?></div>
                                             <small class="text-muted"><?php echo $app['appointment_time']; ?></small>
                                         </td>
-                                        <td>
+                                        <td data-label="Status">
                                             <?php if ($app['status'] === 'confirmed'): ?>
                                                 <span class="badge bg-success">Confirmed</span>
                                             <?php elseif ($app['status'] === 'cancelled'): ?>
@@ -179,7 +179,7 @@ $recent_appointments = $recent_stmt->fetchAll();
                                                 <span class="badge bg-warning text-dark">Pending</span>
                                             <?php endif; ?>
                                         </td>
-                                        <td>
+                                        <td data-label="Details">
                                             <a href="appointments.php" class="btn btn-sm btn-outline-secondary py-1 px-3 rounded-pill fw-semibold" style="font-size:12px;">Manage</a>
                                         </td>
                                     </tr>

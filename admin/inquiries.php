@@ -103,7 +103,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
 
             <!-- Table Card -->
             <div class="card table-card p-4 bg-white shadow-sm">
-                <div class="table-responsive">
+                <div class="table-responsive table-responsive-stack">
                     <table class="table table-hover align-middle mb-0">
                         <thead class="table-light">
                             <tr>
@@ -119,23 +119,23 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                             <?php if (count($inquiries) > 0): ?>
                                 <?php foreach ($inquiries as $inq): ?>
                                 <tr>
-                                    <td class="fw-bold text-muted">#<?php echo $inq['id']; ?></td>
-                                    <td>
+                                    <td data-label="Log ID" class="fw-bold text-muted">#<?php echo $inq['id']; ?></td>
+                                    <td data-label="Sender">
                                         <div class="fw-bold text-dark"><?php echo htmlspecialchars($inq['name']); ?></div>
                                         <small class="text-muted"><a href="mailto:<?php echo htmlspecialchars($inq['email']); ?>" class="text-decoration-none text-muted"><i class="far fa-envelope me-1"></i><?php echo htmlspecialchars($inq['email']); ?></a></small>
                                     </td>
-                                    <td><span class="fw-semibold text-dark"><?php echo htmlspecialchars($inq['subject']); ?></span></td>
-                                    <td>
+                                    <td data-label="Subject"><span class="fw-semibold text-dark"><?php echo htmlspecialchars($inq['subject']); ?></span></td>
+                                    <td data-label="Message">
                                         <!-- Clickable message trigger modal -->
                                         <div class="msg-text small text-muted" data-bs-toggle="modal" data-bs-target="#viewMessageModal" data-name="<?php echo htmlspecialchars($inq['name']); ?>" data-subject="<?php echo htmlspecialchars($inq['subject']); ?>" data-msg="<?php echo htmlspecialchars($inq['message']); ?>" data-date="<?php echo date('Y-m-d h:i A', strtotime($inq['created_at'])); ?>">
                                             <?php echo htmlspecialchars($inq['message']); ?>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td data-label="Date">
                                         <div class="small fw-semibold"><?php echo date('Y-m-d', strtotime($inq['created_at'])); ?></div>
                                         <small class="text-muted"><?php echo date('h:i A', strtotime($inq['created_at'])); ?></small>
                                     </td>
-                                    <td>
+                                    <td data-label="Actions">
                                         <!-- Open full message modal button -->
                                         <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3 py-1 me-1 fw-semibold" style="font-size:12px;" data-bs-toggle="modal" data-bs-target="#viewMessageModal" data-name="<?php echo htmlspecialchars($inq['name']); ?>" data-subject="<?php echo htmlspecialchars($inq['subject']); ?>" data-msg="<?php echo htmlspecialchars($inq['message']); ?>" data-date="<?php echo date('Y-m-d h:i A', strtotime($inq['created_at'])); ?>">
                                             <i class="far fa-eye me-1"></i>Read

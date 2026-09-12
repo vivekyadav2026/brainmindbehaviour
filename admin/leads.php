@@ -103,7 +103,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
 
             <!-- Table Card -->
             <div class="card table-card p-4 bg-white shadow-sm">
-                <div class="table-responsive">
+                <div class="table-responsive table-responsive-stack">
                     <table class="table table-hover align-middle mb-0">
                         <thead class="table-light">
                             <tr>
@@ -119,15 +119,15 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                             <?php if (count($leads) > 0): ?>
                                 <?php foreach ($leads as $lead): ?>
                                 <tr>
-                                    <td class="fw-bold text-muted">#<?php echo $lead['id']; ?></td>
-                                    <td class="fw-bold text-dark"><?php echo htmlspecialchars($lead['name']); ?></td>
-                                    <td>
+                                    <td data-label="Lead ID" class="fw-bold text-muted">#<?php echo $lead['id']; ?></td>
+                                    <td data-label="Name" class="fw-bold text-dark"><?php echo htmlspecialchars($lead['name']); ?></td>
+                                    <td data-label="Contact">
                                         <div class="text-dark"><i class="fas fa-phone-alt me-1 text-muted small"></i><?php echo htmlspecialchars($lead['phone']); ?></div>
                                         <?php if (!empty($lead['email'])): ?>
                                             <div class="small text-muted"><i class="fas fa-envelope me-1 text-muted small"></i><?php echo htmlspecialchars($lead['email']); ?></div>
                                         <?php endif; ?>
                                     </td>
-                                    <td>
+                                    <td data-label="Inquiry Details">
                                         <div class="small text-dark text-wrap" style="max-width: 320px;">
                                             <?php if (!empty($lead['consultation_type'])): ?>
                                                 <div><strong>Type:</strong> <?php echo htmlspecialchars($lead['consultation_type']); ?></div>
@@ -145,11 +145,11 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                                             <?php endif; ?>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td data-label="Received Date">
                                         <div class="small fw-semibold"><?php echo date('Y-m-d', strtotime($lead['created_at'])); ?></div>
                                         <small class="text-muted"><?php echo date('h:i A', strtotime($lead['created_at'])); ?></small>
                                     </td>
-                                    <td>
+                                    <td data-label="Actions">
                                         <!-- WhatsApp direct chat -->
                                         <a href="https://wa.me/<?php echo preg_replace('/[^0-9]/', '', $lead['phone']); ?>" target="_blank" class="btn btn-sm btn-success rounded-pill px-3 py-1 me-1 fw-semibold text-white" style="font-size:12px;">
                                             <i class="fab fa-whatsapp me-1"></i>Chat

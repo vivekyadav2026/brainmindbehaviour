@@ -262,7 +262,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
 
             <!-- Table Card -->
             <div class="card table-card p-4 bg-white shadow-sm">
-                <div class="table-responsive">
+                <div class="table-responsive table-responsive-stack">
                     <table class="table table-hover align-middle mb-0">
                         <thead class="table-light">
                             <tr>
@@ -295,22 +295,22 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                                                   . "If you have any questions, feel free to ask. See you at the clinic!";
                                     ?>
                                 <tr>
-                                    <td class="fw-bold">#<?php echo $app['id']; ?></td>
-                                    <td>
+                                    <td data-label="ID" class="fw-bold">#<?php echo $app['id']; ?></td>
+                                    <td data-label="Patient">
                                         <div class="fw-bold text-dark"><?php echo htmlspecialchars($app['patient_name']); ?></div>
                                         <div class="small text-muted"><i class="fas fa-phone-alt me-1"></i><?php echo htmlspecialchars($app['patient_phone']); ?></div>
                                         <div class="small text-muted"><i class="fas fa-envelope me-1"></i><?php echo htmlspecialchars($app['patient_email']); ?></div>
                                     </td>
-                                    <td>
+                                    <td data-label="Consultation">
                                         <span class="badge bg-info-subtle text-info fw-semibold px-2 py-1">
                                             <?php echo ucfirst($app['appointment_type']); ?>
                                         </span>
                                     </td>
-                                    <td>
+                                    <td data-label="Date & Time">
                                         <div class="fw-semibold small"><?php echo $app['appointment_date']; ?></div>
                                         <div class="text-muted small"><?php echo $app['appointment_time']; ?></div>
                                     </td>
-                                    <td>
+                                    <td data-label="Status">
                                         <?php if ($app['status'] === 'confirmed'): ?>
                                             <span class="badge bg-success">Confirmed</span>
                                         <?php elseif ($app['status'] === 'cancelled'): ?>
@@ -319,7 +319,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                                             <span class="badge bg-warning text-dark">Pending</span>
                                         <?php endif; ?>
                                     </td>
-                                    <td>
+                                    <td data-label="Payment">
                                         <?php 
                                         if ($app['payment_status'] === 'paid') {
                                             echo '<span class="badge bg-success">Paid</span>';
@@ -336,7 +336,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
                                             <br/><a href="../<?php echo htmlspecialchars($app['screenshot_path']); ?>" target="_blank" class="btn btn-sm btn-outline-primary px-2 py-0 mt-1" style="font-size:10px; font-weight:600;"><i class="fas fa-receipt me-1"></i>View Proof</a>
                                         <?php endif; ?>
                                     </td>
-                                    <td>
+                                    <td data-label="Actions">
                                         <div class="dropdown">
                                             <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                                 Manage
