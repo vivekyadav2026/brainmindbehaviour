@@ -12,8 +12,9 @@ $currentAdminPage = basename($_SERVER['PHP_SELF']);
 
 <!-- Collapsible Sidebar menu -->
 <div class="offcanvas-lg offcanvas-start text-white border-end-0 flex-shrink-0" id="sidebarMenu" style="width: 260px; min-height: 100vh;">
-  <div class="offcanvas-header d-lg-none text-white border-bottom" style="background-color: #0f172a; border-color: rgba(255,255,255,0.05) !important;">
-    <h5 class="offcanvas-title fw-bold" id="sidebarMenuLabel">Brain Mind Behaviour</h5>
+  <div class="offcanvas-header d-lg-none text-white border-bottom d-flex align-items-center justify-content-between p-3" style="background-color: #0f172a; border-color: rgba(255,255,255,0.05) !important;">
+    <h5 class="offcanvas-title fw-bold mb-0 text-white" id="sidebarMenuLabel">Brain Mind Behaviour</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
   </div>
   
   <div class="offcanvas-body d-flex flex-column p-0 h-100 w-100">
@@ -22,19 +23,19 @@ $currentAdminPage = basename($_SERVER['PHP_SELF']);
     </div>
     
     <div class="list-group list-group-flush w-100 flex-grow-1 py-3 px-2">
-        <a href="dashboard.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'dashboard.php' ? 'active-link' : ''; ?>">
+        <a href="dashboard.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'dashboard.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
             <i class="fas fa-tachometer-alt me-3 fs-5"></i> Dashboard
         </a>
-        <a href="appointments.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'appointments.php' ? 'active-link' : ''; ?>">
+        <a href="appointments.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'appointments.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
             <i class="fas fa-calendar-check me-3 fs-5"></i> Appointments
         </a>
-        <a href="leads.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'leads.php' ? 'active-link' : ''; ?>">
+        <a href="leads.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'leads.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
             <i class="fas fa-bullhorn me-3 fs-5"></i> Popup Leads
         </a>
-        <a href="inquiries.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'inquiries.php' ? 'active-link' : ''; ?>">
+        <a href="inquiries.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'inquiries.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
             <i class="fas fa-envelope-open-text me-3 fs-5"></i> Contact Log
         </a>
-        <a href="settings.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'settings.php' ? 'active-link' : ''; ?>">
+        <a href="settings.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mb-1 d-flex align-items-center <?php echo $currentAdminPage == 'settings.php' ? 'active-link' : ''; ?>" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu">
             <i class="fas fa-sliders-h me-3 fs-5"></i> Settings
         </a>
         <a href="logout.php" class="list-group-item list-group-item-action text-white rounded-3 border-0 bg-transparent py-3 px-4 mt-4 d-flex align-items-center">

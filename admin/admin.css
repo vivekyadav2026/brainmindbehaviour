@@ -296,3 +296,122 @@ body {
     border-radius: 16px !important;
 }
 
+/* ======================================================
+   MOBILE & TABLET RESPONSIVE STYLES (< 992px & < 576px)
+   ====================================================== */
+
+@media (max-width: 991.98px) {
+    /* Main Content Wrapper Padding & Width */
+    .content-wrapper {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 14px 12px !important;
+        overflow-x: hidden;
+    }
+
+    /* Mobile Header Bar */
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .navbar-brand {
+        font-size: 1rem !important;
+    }
+
+    /* Offcanvas Sidebar on Mobile */
+    #sidebarMenu {
+        width: 280px !important;
+        background-color: var(--sidebar-bg) !important;
+    }
+    
+    #sidebarMenu .offcanvas-body {
+        padding-bottom: 30px !important;
+    }
+
+    /* Stat Cards Grid on Mobile */
+    .stat-card {
+        padding: 14px !important;
+    }
+    .stat-card h3 {
+        font-size: 1.5rem !important;
+    }
+    .icon-box {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Card Padding on Mobile */
+    .card {
+        border-radius: 12px !important;
+        padding: 14px !important;
+    }
+    .table-card {
+        padding: 14px 10px !important;
+    }
+
+    /* Responsive Tables & Touch Scrolling */
+    .table-responsive {
+        border-radius: 8px !important;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 0;
+        overflow-x: auto !important;
+    }
+
+    .table thead th {
+        font-size: 0.7rem !important;
+        padding: 10px 12px !important;
+        white-space: nowrap;
+    }
+
+    .table tbody td {
+        padding: 10px 12px !important;
+        font-size: 0.825rem !important;
+    }
+
+    /* Mobile Search Bar & Filter Form Rows */
+    .search-form-row .col-sm-9,
+    .search-form-row .col-sm-3,
+    .search-form-row .col-md-3,
+    .search-form-row .col-md-4,
+    .search-form-row .col-md-2 {
+        width: 100% !important;
+        margin-bottom: 6px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    h2.fw-bold {
+        font-size: 1.3rem !important;
+    }
+    
+    p.text-muted.small {
+        font-size: 0.78rem !important;
+    }
+
+    .stat-card h6 {
+        font-size: 0.75rem !important;
+    }
+
+    /* Compact Table Cell Font Sizes for Small Phones */
+    .table td small, .table td .small {
+        font-size: 0.75rem !important;
+    }
+
+    /* Compact Pagination Controls on Small Phones */
+    .pagination .page-item .page-link {
+        padding: 5px 9px !important;
+        font-size: 11.5px !important;
+        margin: 0 1px;
+    }
+    
+    /* Action Buttons Wrap & Sizing */
+    .btn-sm {
+        padding: 4px 10px !important;
+        font-size: 11.5px !important;
+    }
+}
+

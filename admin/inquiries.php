@@ -88,7 +88,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
             
             <!-- Search Bar -->
             <div class="card border-0 shadow-sm rounded-3 p-3 mb-4 bg-white">
-                <form method="GET" action="" class="row g-2">
+                <form method="GET" action="" class="row g-2 search-form-row">
                     <div class="col-sm-9 col-md-10">
                         <div class="input-group input-group-sm mb-0">
                             <span class="input-group-text bg-light text-muted border-end-0"><i class="fas fa-search"></i></span>

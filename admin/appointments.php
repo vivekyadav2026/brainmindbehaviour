@@ -232,7 +232,7 @@ if ($limit != 10) $queryParams .= '&limit=' . $limit;
             
             <!-- Filters Bar -->
             <div class="card border-0 shadow-sm rounded-3 p-3 mb-4 bg-white">
-                <form method="GET" action="" class="row g-2">
+                <form method="GET" action="" class="row g-2 search-form-row">
                     <div class="col-md-4">
                         <div class="input-group input-group-sm">
                             <span class="input-group-text bg-light text-muted border-end-0"><i class="fas fa-search"></i></span>
