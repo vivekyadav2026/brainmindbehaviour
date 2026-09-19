@@ -57,7 +57,7 @@ $services = [
         'title' => 'Addiction',
         'desc' => 'De-addiction programs for alcohol, substance abuse, and behavioral addictions.',
         'icon' => 'bi-capsule',
-        'img' => 'https://images.unsplash.com/photo-1563213126-a4273aed2016?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        'img' => 'assets/img/addiction_head.jpg',
         'link' => 'addiction.php',
         'features' => ['Gaming and Gambling addictions', 'Detoxification', 'De-addiction treatment programs']
     ],

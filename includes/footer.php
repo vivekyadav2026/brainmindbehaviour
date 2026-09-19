@@ -163,36 +163,25 @@
               <input type="text" name="name" class="form-control appointment-modal-input" placeholder="Your Name" required>
             </div>
 
-            <!-- 3. Preferred Location -->
-            <div class="mb-2">
-              <label class="appointment-field-label">Preferred Location</label>
-              <select name="location" class="form-select appointment-modal-input" required>
-                <option value="" disabled selected>Select Location</option>
-                <option value="Visakhapatnam (Maharani Peta)">Visakhapatnam (Maharani Peta)</option>
-                <option value="Online (Video Call)">Online (Video Call)</option>
-              </select>
-            </div>
 
-            <!-- 4. Contact No. -->
+
+            <!-- 3. Contact No. -->
             <div class="mb-2">
               <label class="appointment-field-label">Contact No.</label>
               <input type="tel" name="phone" class="form-control appointment-modal-input" placeholder="Your Number" required>
             </div>
 
-            <!-- 5. Consult a Psychiatrist or Psychologist -->
+            <!-- 4. Consult a Psychiatrist or Psychologist -->
             <div class="mb-3">
               <label class="appointment-field-label">Consult a Psychiatrist or Psychologist</label>
               <select name="specialist" class="form-select appointment-modal-input" required>
                 <option value="" disabled selected>Select</option>
                 <option value="Psychiatrist">Psychiatrist</option>
                 <option value="Psychologist">Psychologist</option>
-                <option value="Dr. Ramanand Satapathy (Psychiatrist)">Dr. Ramanand Satapathy (Psychiatrist)</option>
-                <option value="Dr. Suprriya Satapathy (Psychiatrist)">Dr. Suprriya Satapathy (Psychiatrist)</option>
-                <option value="Mr. Dev Satapathy (Psychologist)">Mr. Dev Satapathy (Psychologist)</option>
               </select>
             </div>
 
-            <!-- 6. Privacy Policy Checkbox -->
+            <!-- 5. Privacy Policy Checkbox -->
             <div class="form-check d-flex align-items-center justify-content-center gap-2 mb-3">
               <input class="form-check-input mt-0" type="checkbox" id="appointmentPrivacyCheck" required style="width: 16px; height: 16px; cursor: pointer;" checked>
               <label class="form-check-label" for="appointmentPrivacyCheck" style="color: #334155; font-size: 13px;">
